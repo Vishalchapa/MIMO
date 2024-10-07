@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'cloudinary',
     'tasks',
+    'core',
 ]
 
 MIDDLEWARE = [
