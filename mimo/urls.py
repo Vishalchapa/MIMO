@@ -20,5 +20,4 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),  # Django Admin
     path('', include('core.urls')),  # Core app for static pages
-    path('tasks/', include('tasks.urls')),  # Task app for dashboard and tasks
 ]
