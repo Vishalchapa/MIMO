@@ -4,7 +4,7 @@ Mimo is a user-friendly task management app designed to help individuals and tea
 
 ## Live website
 
-The live link can be found here - [MIMO]() 
+The live link can be found here - [MIMO](https://mimo-app-bab402704619.herokuapp.com/) 
 
 ![MIMO responsive screenshot]()
 
@@ -217,7 +217,7 @@ Documentation at [Django-extensions>Graph models](<https://django-extensions.rea
 
 # Agile Methodologies - Project Management
 
-We used my [Github Projects Board](<https://github.com/>) to plan and document all of our work, initially we started with a [Miro board](<https://miro.com/app/board/uXjVLWVK9FY=/>) board to allow ourselves to make some mistakes and gather any scraps of notes or information that we had and then refined them into our Projects board.
+We used my [Github Projects Board](<https://github.com/Vishalchapa/MIMO/projects?query=is%3Aopen>) to plan and document all of our work, initially we started with a [Miro board](<https://miro.com/app/board/uXjVLWVK9FY=/>) board to allow ourselves to make some mistakes and gather any scraps of notes or information that we had and then refined them into our Projects board.
 
 
 ## MoSCoW Prioritization
