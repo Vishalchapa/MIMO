@@ -1,131 +1,468 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# MIMO - Mindful Intentions, Meaningful Outcomes
 
-Welcome Henry Ofodieze,
+Mimo is a user-friendly task management app designed to help individuals and teams efficiently organize and prioritize their tasks, embodying the philosophy of "Mindful Intentions, Meaningful Outcomes." With features like project tagging and customizable task statuses, Mimo streamlines workflow management, allowing users to focus on what matters most.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+## Live website
 
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **June 18, 2024**
+The live link can be found here - [MIMO]() 
 
-## Gitpod Reminders
+![MIMO responsive screenshot]()
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## Purpose of the project
+The purpose of a MIMO app is to help individuals and teams organise, prioritise, and track tasks efficiently to achieve specific goals or complete projects. The development is focusing on Django and Bootstrap frameworks, Database manipulation and CRUD functionality.
 
-`python3 -m http.server`
+<hr>
 
-A blue button should appear to click: _Make Public_,
+## Table of Contents
 
-Another blue button should appear to click: _Open Browser_.
+- [MIMO](#mimo)
+  - [Purpose of the project](#purpose-of-the-project)
+  - [Table of Contents](#table-of-contents)
+- [UX/UI](#ux---user-expirience)
+  - [User Stories](#user-stories)
+  - [Design Inspiration](#design-inspiration)
+  - [Wireframes](#wireframes)
+  - [Final View](#final-view)
+- [Features](#features)
+  - [Existing features](#existing-features)
+  - [Features left to implement](#features-left-to-implement)
+- [Database Schema - Entity Relationship Diagram](#database-schema---entity-relationship-diagram)
+- [Agile Methodologies - Project Management](#agile-methodologies---project-management)
+  - [MoSCoW Prioritization](#moscow-prioritization)
+- [Deployment](#deployment)
+  - [Connecting to GitHub](#connecting-to-github)
+  - [Django Project Setup](#django-project-setup)
+  - [Cloudinary API](#cloudinary-api)
+  - [Heroku deployment](#heroku-deployment)
+- [Technologies Used](#technologies-used)
+- [Testing](#testing)
+  - [Validator testing](#validator-testing)
+    - [HTML](#html)
+    - [CSS](#css)
+    - [JavaScript](#javascript)
+    - [Python](#python-validation)
+    - [Lighthouse](#lighthouse)
+    - [Wave](#wave-accessibility-evaluation)
+  - [Manual Testing](#manual-testing)
+- [Credits](#credits)
+  - [Content](#content)
 
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
 
-A blue button should appear to click: _Make Public_,
+# UX - User Expirience
 
-Another blue button should appear to click: _Open Browser_.
+## User Stories:
 
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+- User
+  - As a user, I want to register and log in so that I can save my tasks securely and access them from any device
+  - As a user, I want to add new tasks to the task manager so that I can track the tasks I need to complete.
+  - As a user, I want to mark a task as completed so that I can track which tasks I have finished.
+  - As a user, I want to delete a task so that I can remove tasks that are no longer needed.
+  - As a user, I want to view a list of all my tasks so that I can see what tasks I have to complete.
+  - As a user, I want to have the ability to prioritize tasks so that I can focus on the most important tasks first.
+  - As a user, I want to edit an existing task so that I can update details if the task changes.
+  - As a user, I want to see a count of how many tasks I have, how many are completed, and how many are pending so that I can easily understand my progress.
+  - As a user, I want to filter tasks by their completion status so that I can focus on unfinished tasks.
+  - As a user, I want to set due dates for tasks so that I can manage my deadlines.
+  - As a user, I want to be able to search for tasks by their title so that I can quickly find a specific task.
+  - As a user, I want to categorize tasks (e.g., Work, Personal, Urgent) so that I can organize my tasks more effectively.
+  - As a user, I want to receive reminders for upcoming due dates so that I can stay on track with my tasks.
+  - As a user, I want to have the ability to share tasks with other users or collaborate on tasks.
+  - As a user, I want to sync my due dates with a calendar app (e.g., Google Calendar) to manage my tasks alongside other events.
 
-To log into the Heroku toolbelt CLI:
+- Admin
+  - As an Admin, I want to add/update/delete articles on the Home page, so the user can receive useful information about time-managment
+  
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+## Design Inspiration
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
 
-### Connecting your Mongo database
 
-- **Connect to Mongo CLI on a IDE**
-- navigate to your MongoDB Clusters Sandbox
-- click **"Connect"** button
-- select **"Connect with the MongoDB shell"**
-- select **"I have the mongo shell installed"**
-- choose **mongosh (2.0 or later)** for : **"Select your mongo shell version"**
-- choose option: **"Run your connection string in your command line"**
-- in the terminal, paste the copied code `mongo "mongodb+srv://<CLUSTER-NAME>.mongodb.net/<DBname>" --apiVersion 1 --username <USERNAME>`
-  - replace all `<angle-bracket>` keys with your own data
-- enter password _(will not echo **\*\*\*\*** on screen)_
+### Colour Scheme
 
-------
+As a main colours, we used ``` ``` colour for the text and ```  ``` for block background to make content more readable.
 
-## Release History
+Colour Blind Safe and contrast was checked by [Adobe Color](<https://color.adobe.com/create/color-accessibility>)
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+![Color Blind Safe]()
+*Accessibility check for colour scheme*
 
-**June 18, 2024,** Add Mongo back into template
+![Contrast Checker]()
+*Contrast checker*
 
-**June 14, 2024,** Temporarily remove Mongo until the key issue is resolved
+![Colour Scheme]()
+*Colour Scheme*
 
-**May 28 2024:** Fix Mongo and Links installs
+### Font
 
-**April 26 2024:** Update node version to 16
+Using [Google Font](<https://fonts.google.com/>), we imported "Catamaran" to the CSS file and set it as the default font. 
 
-**September 20 2023:** Update Python version to 3.9.17.
+## Wireframes
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+__Browser View:__
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+<details open>
+    <summary>View of home page for logged in user</summary>  
+    <img src="">  
+</details>
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+<details>
+    <summary>View of home page for logged out user</summary>  
+    <img src="">  
+</details>
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+<details>
+    <summary></summary>  
+    <img src="">  
+</details>
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+<details>
+    <summary>Signup form</summary>  
+    <img src="">  
+</details>
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+__Phone View:__
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+<details open>
+    <summary>View of home page for logged in user</summary>  
+    <img src="">  
+</details>
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+<details>
+    <summary>View of home page for logged out user</summary>  
+    <img src="">  
+</details>
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+<details>
+    <summary></summary>  
+    <img src="">  
+</details>
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+## Final View
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+<details open>
+    <summary>Browser view of home page</summary>  
+    <img src="">  
+    <img src="">  
+    <img src="">  
+</details>
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+<details>
+    <summary></summary>  
+    <img src="">  
+</details>
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
 
-------
+# Features 
 
-## FAQ about the uptime script
+Detailing the existing and planned features and the value they bring.
 
-**Why have you added this script?**
+## Existing Features
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+ __Navbar Menu__
 
-**How will this affect me?**
+- For better user experience, navigation links are located to right side of the navbar.
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+![Navbar on desktop view](img.png)
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+- For the small devices we added burger menu and logo with the name of the app to the every page.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+![Navbar burger menu](img.png)
 
-**So….?**
+__Logged in/logged out user message__
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+- The user will be informed whether they are logged in or not.
 
-**Can I opt out?**
+![Message](img.png)
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+__Toast Messages__
+
+- When you interact with the website, you'll receive toast messages that inform you about the success or failure of your actions. Whether you’re creating new task or deleting task, registering, logging in or out, these notifications will provide immediate feedback on your activities.
+
+![Toast message](img.png)
+
+__Authorisation__
+
+- Users can register, log in, and log out. Once authorized, they can access features such as adding new tasks, track them, edit and delete.
+
+<details open>
+    <summary>Sign Up</summary>  
+    <img src="">  
+</details>
+
+<details open>
+    <summary>Log In</summary>  
+    <img src="">  
+</details>
+
+<details>
+    <summary>Log Out</summary>  
+    <img src="">  
+</details>
+
+<details>
+    <summary>Authorized user</summary>  
+    <img src="">  
+</details>
+
+<details>
+    <summary>Non-authorized user</summary>  
+    <img src="">  
+</details>
+
+
+__The Footer__ 
+
+- The footer section includes links to the relevant social media sites of MIMO app. The links will open to a new tab to allow easy navigation for the user. 
+- The footer is valuable to the user as it encourages them to keep connected via social media
+
+![Footer](img.png)
+
+## Features Left to Implement
+
+# Database Schema - Entity Relationship Diagram
+
+The Entity-Relationship Diagram (ERD) for MIMO showcases the connections between users, tasks and articles. It also highlights that only admin or staff users have the privilege to add content to the home page. 
+This diagram is crucial in visualizing the relationships among various models within the PostgreSQL database.
+
+![ERD](img.png)
+
+The above ERD was generated using Python Extension - pygraphviz and pydotplus. 
+Documentation at [Django-extensions>Graph models](<https://django-extensions.readthedocs.io/en/latest/graph_models.html>).
+
+# Agile Methodologies - Project Management
+
+We used my [Github Projects Board](<https://github.com/>) to plan and document all of our work, initially we started with a [Miro board](<https://miro.com/app/board/uXjVLWVK9FY=/>) board to allow ourselves to make some mistakes and gather any scraps of notes or information that we had and then refined them into our Projects board.
+
+
+## MoSCoW Prioritization
+
+We chose to follow the MoSCoW Prioritization method for Freefido, identifying and labelling my:
+
+ - __Must Haves:__ the 'required', critical components of the project. Completing our 'Must Haves' helped us to reach the MVP (Minimum Viable Product) for this project early, allowing us to develop the project further than originally planned.
+
+ - __Should Haves:__ the components that are valuable to the project but not absolutely 'vital' at the MVP stage. The 'Must Haves' must receive priority over the 'Should Haves'.
+
+ - __Could Haves:__ these are the features that are a 'bonus' to the project, it would be nice to have them in this phase, but only if the most important issues have been completed first and time allows.
+
+ - __Won't Haves:__ the features or components that either no longer fit the project's brief or are of very low priority for this release.
+
+![Project Board](img.png)
+
+
+# Deployment
+
+## Connecting to GitHub  
+
+To begin this project from scratch, you must first create a new GitHub repository using the [Code Institute's Template](https://github.com/Code-Institute-Org/ci-full-template). This template provides the relevant tools to get you started. To use this template:
+
+1. Log in to [GitHub](https://github.com/) or create a new account.
+2. Navigate to the above CI Full Template.
+3. Click '**Use this template**' -> '**Create a new repository**'.
+4. Choose a new repository name and click '**Create repository from template**'.
+5. In your new repository space, click the purple CodeAnywhere (if this is your IDE of choice) button to generate a new workspace.
+
+## Django Project Setup
+
+1. Install Django and supporting libraries: 
+   
+- ```pip3 install 'django<4' gunicorn```
+- ```pip3 install dj_database_url psycopg2```
+- ```pip3 install dj3-cloudinary-storage```  
+  
+2. Once you have installed any relevant dependencies or libraries, such as the ones listed above, it is important to create a **requirements.txt** file and add all installed libraries to it with the ```pip3 freeze --local > requirements.txt``` command in the terminal.  
+3. Create a new Django project in the terminal ```django-admin startproject mimo .```
+4. Create a new app eg. ```python3 mangage.py startapp tasks```
+5. Add this to list of **INSTALLED_APPS** in **settings.py** - 'review',
+6. Create a superuser for the project to allow Admin access and enter credentials: ```python3 manage.py createsuperuser```
+7. Migrate the changes with commands: ```python3 manage.py migrate```
+8. An **env.py** file must be created to store all protected data such as the **DATABASE_URL** and **SECRET_KEY**. These may be called upon in your project's **settings.py** file along with your Database configurations. The **env.py** file must be added to your **gitignore** file so that your important, protected information is not pushed to public viewing on GitHub. For adding to **env.py**:
+
+- ```import os```
+- ```os.environ["DATABASE_URL"]="<copiedURLfromCI>"```
+- ```os.environ["SECRET_KEY"]="my_super^secret@key"```
+
+For adding to **settings.py**:
+
+- ```import os```
+- ```import dj_database_url```
+- ```if os.path.exists("env.py"):```
+- ```import env```
+- ```SECRET_KEY = os.environ.get('SECRET_KEY')``` (actual key hidden within env.py)  
+
+9. Replace **DATABASES** with:
 
 ```
-pkill uptime.sh
-rm .vscode/uptime.sh
+DATABASES = {
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+  }
 ```
 
-**Anything more?**
+10. Set up the templates directory in **settings.py**:
+- Under ``BASE_DIR`` enter ``TEMPLATES_DIR = os.path.join(BASE_DIR, ‘templates’)``
+- Update ``TEMPLATES = 'DIRS': [TEMPLATES_DIR]`` with:
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+```
+os.path.join(BASE_DIR, 'templates'),
+os.path.join(BASE_DIR, 'templates', 'allauth')
+```
 
----
+- Create the media, static and templates directories in top level of project file in IDE workspace.
 
-Happy coding!
+11. A **Procfile** must be created within the project repo for Heroku deployment with the following placed within it: ```web: gunicorn mimo.wsgi```
+12. Make the necessary migrations again.
+
+## Cloudinary API 
+
+Cloudinary provides a cloud hosting solution for media storage. All uploaded images for the menu items are hosted here.
+
+Set up a new account at [Cloudinary](https://cloudinary.com/) and add your Cloudinary API environment variable to your **env.py** and Heroku Config Vars.
+In your project workspace: 
+
+- Add Cloudinary libraries to INSTALLED_APPS in settings.py 
+- In the order: 
+```
+   'cloudinary_storage',  
+   'django.contrib.staticfiles',  
+   'cloudinary',
+```
+- Add to **env.py** and link up with **settings.py**: ```os.environ["CLOUDINARY_URL"]="cloudinary://...."``` 
+- Set Cloudinary as storage for media and static files in settings.py:
+- ```STATIC_URL = '/static/'```
+```
+  STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]  
+  STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')‌  
+```
+
+## Heroku deployment
+
+To start the deployment process , please follow the below steps:
+
+1. Log in to [Heroku](https://id.heroku.com/login) or create an account if you are a new user.
+2. Once logged in, in the Heroku Dashboard, navigate to the '**New**' button in the top, right corner, and select '**Create New App**'.
+3. Enter an app name and choose your region. Click '**Create App**'. 
+4. In the Deploy tab, click on the '**Settings**', reach the '**Config Vars**' section and click on '**Reveal Config Vars**'. Here you will enter KEY:VALUE pairs for the app to run successfully. The KEY:VALUE pairs that you will need are your: 
+   
+   - **CLOUDINARY_URL**: **cloudinary://....** 
+   - **DATABASE_URL**:**postgres://...** 
+   - **DISABLE_COLLECTSTATIC** of value '1' (N.B Remove this Config Var before deployment),
+   -  **PORT**:**8000**
+   -  **SECRET_KEY** and value  
+  
+5. Add the Heroku host name into **ALLOWED_HOSTS** in your projects **settings.py file** -> ```['herokuappname', ‘localhost’, ‘8000 port url’].```
+6. Once you are sure that you have set up the required files including your requirements.txt and Procfile, you have ensured that **DEBUG=False**, save your project, add the files, commit for initial deployment and push the data to GitHub.
+7. Go to the '**Deploy**' tab and choose GitHub as the Deployment method.
+8. Search for the repository name, select the branch that you would like to build from, and connect it via the '**Connect**' button.
+9.  Choose from '**Automatic**' or '**Manual**' deployment options, I chose the 'Manual' deployment method. Click '**Deploy Branch**'.
+10. Once the waiting period for the app to build has finished, click the '**View**' link to bring you to your newly deployed site. If you receive any errors, Heroku will display a reason in the app build log for you to investigate. **DISABLE_COLLECTSTATIC**  may be removed from the Config Vars once you have saved and pushed an image within your project, as can **PORT:8000**.
+
+# Technologies Used
+
+- HTML5
+- CSS3
+- Python
+  - asgiref==3.8.1
+  - gunicorn==20.1.0
+  - psycopg==3.2.2
+  - PyJWT==2.9.0
+  - python3-openid==3.2.0
+  - requests-oauthlib==2.0.0
+  - sqlparse==0.5.1
+  - urllib3==1.26.20
+  - whitenoise==5.3.0
+- Django
+  - dj-database-url==0.5.0
+  - Django==4.2.14
+  - django-allauth==0.57.2
+  - django-crispy-forms==2.3
+  - dj3-cloudinary-storage==0.0.6
+  - django-extensions==3.2.3
+  - django-summernote==0.8.20.0
+- Cloudinary
+  - cloudinary==1.41.0
+- Heroku
+- GitHub
+- GitHub Projects
+
+
+# Testing 
+## Validator Testing 
+
+### HTML
+
+For my HTML files I have used [HTML W3C Validator](https://validator.w3.org) to validate all of my HTML files.
+
+I have had to follow a different approach for validating my HTML for this project as the majority of my pages are developed using Jinja syntax such as '{% extends "base.html" %}' and '{{ form|crispy }}' and most require user authentication. The HTML validator will throw errors if I were to use my website's URL so I have had to follow the below approach for every page:
+
+- Via the deployed Heroku app link, I have navigated to each individual page.
+- Right clicking on the screen/CTRL+U/⌘+U on Mac, allows a menu to appear, giving me the option to 'View page source'.
+- The complete HTML code for the deployed page will appear, allowing you to select the entire code using CTRL+A/⌘+A on Mac.
+- Paste the copied code into the [validate by input](https://validator.w3.org/#validate_by_input) option.
+- Check for errors and warnings, fix any issues, revalidate by following the above steps and record the results.
+
+![Html validation](img.png)
+
+All HTML pages were validated and received a 'No errors or warning to show' result as shown above.
+
+<hr>
+
+### CSS
+
+[W3C CSS Validator](https://jigsaw.w3.org/css-validator/) was used to validate my CSS file. External CSS for Bootstrap, provided by [CDN](https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css) was not tested. Warnings were present because of using vendor extentions for different browsers
+
+![CSS Validation](img.png)
+
+![CSS warnings](img.png)
+ 
+<hr>
+
+### JavaScript
+
+[JSHint](https://jshint.com/) was used to validate the small amount of JavaScript code added to the project. External JS, for Bootstrap purposes, obtained via [CDN](https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js) was not validated through JSHint
+
+![JS Validator](image.png)
+
+<hr>
+
+### Python Validation
+
+[CI Python Linter](https://pep8ci.herokuapp.com/#) was used to validate the Python files that were created or edited by myself. No issues presented and line lengths were double checked. I have included some screenshots with the results below.
+
+| Feature | admin.py | forms.py | models.py | urls.py | views.py |
+|---------|----------|----------|-----------|---------|----------|
+| App  | [no errors](image.png) | [no errors](image.png) | [no errors](image.png) | [no errors](image.png) | [no errors](image.png) |
+
+<hr>
+
+### LightHouse
+
+Lighthouse testing was carried out in Incognito mode to acheive the best result. Performance was lower than preferred due to the site used Cloudinary storage. Images used in the sites design were saved in webp and png format, and compressed using [tinypng](https://tinypng.com/) and [To WebP](https://towebp.io/) to offer the best chance for a decent performance score.
+
+![Lighthouse desktop]()
+
+![Lighthouse mobile]()
+
+### Wave Accessibility Evaluation
+
+![WAVE Web Accessibility Evaluation Tools]()
+  
+## Manual Testing
+
+All features were tested on different devices(mobile, laptop, tablet)
+| Feature | Tested? | Screenshots | User Feedback Provided | Pass/Fail |
+|---------|---------|-------------|------------------------| ----------|
+| Feature | Yes/No | [Name for image](path for image.png) | Feedback | Pass/Fail |
+
+<hr>
+
+# Credits 
+
+
+## Content 
+
+- Icon for webpage created with [Favicon generator](https://realfavicongenerator.net/)
+- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
+- The CDN framework used for ready-made styling was [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/download/)
+- [Balsamiq](https://balsamiq.com/) used for wireframe
+- [Perplexity](https://www.perplexity.ai/)
+- [Miro](https://miro.com) used for planning the work process
