@@ -4,7 +4,7 @@ Mimo is a user-friendly task management app designed to help individuals and tea
 
 ## Live website
 
-The live link can be found here - [MIMO]() 
+The live link can be found here - [MIMO](https://mimo-app-bab402704619.herokuapp.com/) 
 
 ![MIMO responsive screenshot]()
 
@@ -52,25 +52,24 @@ The purpose of a MIMO app is to help individuals and teams organise, prioritise,
 
 ## User Stories:
 
-- User
-  - As a user, I want to register and log in so that I can save my tasks securely and access them from any device
-  - As a user, I want to add new tasks to the task manager so that I can track the tasks I need to complete.
-  - As a user, I want to mark a task as completed so that I can track which tasks I have finished.
-  - As a user, I want to delete a task so that I can remove tasks that are no longer needed.
-  - As a user, I want to view a list of all my tasks so that I can see what tasks I have to complete.
-  - As a user, I want to have the ability to prioritize tasks so that I can focus on the most important tasks first.
-  - As a user, I want to edit an existing task so that I can update details if the task changes.
-  - As a user, I want to see a count of how many tasks I have, how many are completed, and how many are pending so that I can easily understand my progress.
-  - As a user, I want to filter tasks by their completion status so that I can focus on unfinished tasks.
-  - As a user, I want to set due dates for tasks so that I can manage my deadlines.
-  - As a user, I want to be able to search for tasks by their title so that I can quickly find a specific task.
-  - As a user, I want to categorize tasks (e.g., Work, Personal, Urgent) so that I can organize my tasks more effectively.
-  - As a user, I want to receive reminders for upcoming due dates so that I can stay on track with my tasks.
-  - As a user, I want to have the ability to share tasks with other users or collaborate on tasks.
-  - As a user, I want to sync my due dates with a calendar app (e.g., Google Calendar) to manage my tasks alongside other events.
-
-- Admin
-  - As an Admin, I want to add/update/delete articles on the Home page, so the user can receive useful information about time-managment
+| User Story | Priority |
+|----------------------------------------------------------------------------------------------------------------------------|---------------|
+| As a user, I want to register and log in so that I can save my tasks securely and access them from any device | **MUST HAVE** |
+| As a user, I want to add new tasks to the task manager so that I can track the tasks I need to complete. | **MUST HAVE** |
+| As a user, I want to mark a task as completed so that I can track which tasks I have finished. | **MUST HAVE** |
+| As a user, I want to delete a task so that I can remove tasks that are no longer needed. | **MUST HAVE** |
+| As a user, I want to view a list of all my tasks so that I can see what tasks I have to complete. | **MUST HAVE** |
+| As a user, I want to have the ability to prioritize tasks so that I can focus on the most important tasks first. | **SHOULD HAVE** |
+| As a user, I want to edit an existing task so that I can update details if the task changes. | **SHOULD HAVE** |
+| As a user, I want to see a count of how many tasks I have, how many are completed, and how many are pending so that I can easily understand my progress. | **SHOULD HAVE** |
+| As a user, I want to filter tasks by their completion status so that I can focus on unfinished tasks. | **SHOULD HAVE** |
+| As a user, I want to set due dates for tasks so that I can manage my deadlines. | **COULD HAVE** |
+| As a user, I want to be able to search for tasks by their title so that I can quickly find a specific task. | **COULD HAVE** |
+| As a user, I want to categorize tasks (e.g., Work, Personal, Urgent) so that I can organize my tasks more effectively. | **COULD HAVE** |
+| As a user, I want to receive reminders for upcoming due dates so that I can stay on track with my tasks. | **COULD HAVE** |
+| As a user, I want to have the ability to share tasks with other users or collaborate on tasks. | **COULD HAVE** |
+| As a user, I want to sync my due dates with a calendar app (e.g., Google Calendar) to manage my tasks alongside other events. | **COULD HAVE** |
+| As an Admin, I want to add/update/delete articles on the Home page, so the user can receive useful information about time-managment | **WON'T HAVE** |
   
 
 ## Design Inspiration
@@ -101,41 +100,25 @@ Using [Google Font](<https://fonts.google.com/>), we imported "Catamaran" to the
 __Browser View:__
 
 <details open>
-    <summary>View of home page for logged in user</summary>  
-    <img src="">  
+    <summary>Home page tablet and large screens for logged out user</summary>  
+    <img src="docs/wireframes/home-page-tablet-and-large-screens.png">  
 </details>
 
-<details>
-    <summary>View of home page for logged out user</summary>  
-    <img src="">  
-</details>
-
-<details>
-    <summary></summary>  
-    <img src="">  
-</details>
-
-<details>
-    <summary>Signup form</summary>  
-    <img src="">  
+<details open>
+    <summary>Dashboard tablet and large screens for logged in users</summary>  
+    <img src="docs/wireframes/dashboard-tablet-and-large-screens.png">  
 </details>
 
 __Phone View:__
 
 <details open>
-    <summary>View of home page for logged in user</summary>  
-    <img src="">  
+    <summary>Home page mobile for logged out user</summary>  
+    <img src="docs/wireframes/home-page-mobile.png">  
 </details>
 
-<details>
-    <summary>View of home page for logged out user</summary>  
-    <img src="">  
-</details>
-
-
-<details>
-    <summary></summary>  
-    <img src="">  
+<details open>
+    <summary>Dashboard mobile for logged in users</summary>  
+    <img src="docs/wireframes/dashboard-for-mobile-screens.png">  
 </details>
 
 ## Final View
@@ -232,7 +215,7 @@ Documentation at [Django-extensions>Graph models](<https://django-extensions.rea
 
 # Agile Methodologies - Project Management
 
-We used my [Github Projects Board](<https://github.com/>) to plan and document all of our work, initially we started with a [Miro board](<https://miro.com/app/board/uXjVLWVK9FY=/>) board to allow ourselves to make some mistakes and gather any scraps of notes or information that we had and then refined them into our Projects board.
+We used my [Github Projects Board](<https://github.com/Vishalchapa/MIMO/projects?query=is%3Aopen>) to plan and document all of our work, initially we started with a [Miro board](<https://miro.com/app/board/uXjVLWVK9FY=/>) board to allow ourselves to make some mistakes and gather any scraps of notes or information that we had and then refined them into our Projects board.
 
 
 ## MoSCoW Prioritization
