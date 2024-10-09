@@ -1,21 +1,3 @@
-from django import forms
-from .models import Task
-class TaskForm(forms.ModelForm):
-    class Meta:
-        model = Task
-        fields = ['title', 'body', 'priority', 'due_day', 'status']
-        widgets = {
-            'due_day': forms.DateInput(attrs={'type': 'date'}),
-            'status': forms.Select(),  # For dropdown choices
-            'priority': forms.Select(),  # For dropdown priority
-        }
-
-
-
-
-NEW
-
-1:48
 {% extends 'base.html' %}
 {% block content %}
     <div class="container">
@@ -32,7 +14,7 @@ NEW
             <thead>
                 <tr>
                     <th>Title</th>
-                    <th>Due Date</th> <!-- Renamed to 'Due Day' -->
+                    <th>Due Date</th>
                     <th>Priority</th>
                     <th>Status</th>
                     <th>Actions</th>
@@ -42,7 +24,7 @@ NEW
                 {% for task in search_results %}
                 <tr>
                     <td>{{ task.title }}</td>
-                    <td>{{ task.due_day }}</td> <!-- Updated from due_date to due_day -->
+                    <td>{{ task.due_day }}</td>
                     <td>{{ task.get_priority_display }}</td>
                     <td>{{ task.get_status_display }}</td>
                     <td>
@@ -58,12 +40,15 @@ NEW
             </tbody>
         </table>
         {% endif %}
-        <!-- Task Creation Form -->
-        <h2>Create a New Task</h2>
+        <br>
+         <!-- Button to show the Create Task form -->
+         <button id="create-task-btn">Create New Task</button>
+        <!-- Task Creation and Edit Form -->
+        <h2>{% if task_id %}Edit Task{% else %}Create a New Task{% endif %}</h2>
         <form method="post">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit">Create Task</button>
+            <button type="submit">{% if task_id %}Save Changes{% else %}Create Task{% endif %}</button>
         </form>
         <!-- Active Tasks Section -->
         <h2>Active Tasks</h2>
@@ -85,9 +70,9 @@ NEW
                     <td>{{ task.get_priority_display }}</td>
                     <td>{{ task.get_status_display }}</td>
                     <td>
-                        <a href="{% url 'task-create' %}">Create Task</a>
-                        <a href="{% url 'task-edit' task.id %}">Edit</a>
+                        <a href="{% url 'task-edit' task.id %}">Edit</a> |
                         <a href="{% url 'task-delete' task.id %}">Delete</a>
+                        <a href="{% url 'task-complete' task.id %}">Mark as Complete</a>
                     </td>
                 </tr>
                 {% empty %}
