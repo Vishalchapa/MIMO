@@ -85,7 +85,8 @@ NEW
                     <td>{{ task.get_priority_display }}</td>
                     <td>{{ task.get_status_display }}</td>
                     <td>
-                        <a href="{% url 'task-edit' task.id %}">Edit</a> |
+                        <a href="{% url 'task-create' %}">Create Task</a>
+                        <a href="{% url 'task-edit' task.id %}">Edit</a>
                         <a href="{% url 'task-delete' task.id %}">Delete</a>
                     </td>
                 </tr>

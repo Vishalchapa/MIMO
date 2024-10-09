@@ -2,6 +2,9 @@ from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from .models import Task
 from .forms import TaskForm
+from django.views.generic import UpdateView, DeleteView
+
+
 def dashboard(request):
     # Get active and completed tasks for the user
     active_tasks = Task.objects.filter(user=request.user, status__in=[0, 1])  # 0: Not Started, 1: In Progress
@@ -30,3 +33,20 @@ def dashboard(request):
         'query': query
     }
     return render(request, 'tasks/dashboard.html', context)
+
+class TaskUpdateView(UpdateView):
+    model = Task
+    form_class = TaskForm
+    template_name = 'tasks/task_form.html'
+    success_url = reverse_lazy('dashboard')
+   
+    def get_queryset(self):
+        return Task.objects.filter(user=self.request.user)
+
+class TaskDeleteView(DeleteView):
+    model = Task
+    template_name = 'tasks/task_confirm_delete.html'
+    success_url = reverse_lazy('dashboard')
+  
+    def get_queryset(self):
+        return Task.objects.filter(user=self.request.user)
