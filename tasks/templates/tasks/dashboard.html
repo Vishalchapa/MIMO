@@ -1,0 +1,130 @@
+from django import forms
+from .models import Task
+class TaskForm(forms.ModelForm):
+    class Meta:
+        model = Task
+        fields = ['title', 'body', 'priority', 'due_day', 'status']
+        widgets = {
+            'due_day': forms.DateInput(attrs={'type': 'date'}),
+            'status': forms.Select(),  # For dropdown choices
+            'priority': forms.Select(),  # For dropdown priority
+        }
+
+
+
+
+NEW
+
+1:48
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container">
+        <h1>Your Task Dashboard</h1>
+        <!-- Search Form -->
+        <form method="GET" action="{% url 'dashboard' %}">
+            <input type="text" name="q" placeholder="Search tasks..." value="{{ query }}">
+            <button type="submit">Search</button>
+        </form>
+        <!-- Display Search Results if a search was made -->
+        {% if search_results %}
+        <h2>Search Results</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Due Date</th> <!-- Renamed to 'Due Day' -->
+                    <th>Priority</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for task in search_results %}
+                <tr>
+                    <td>{{ task.title }}</td>
+                    <td>{{ task.due_day }}</td> <!-- Updated from due_date to due_day -->
+                    <td>{{ task.get_priority_display }}</td>
+                    <td>{{ task.get_status_display }}</td>
+                    <td>
+                        <a href="{% url 'task-edit' task.id %}">Edit</a> |
+                        <a href="{% url 'task-delete' task.id %}">Delete</a>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="5">No tasks found</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+        <!-- Task Creation Form -->
+        <h2>Create a New Task</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Create Task</button>
+        </form>
+        <!-- Active Tasks Section -->
+        <h2>Active Tasks</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Due Date</th>
+                    <th>Priority</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for task in active_tasks %}
+                <tr>
+                    <td>{{ task.title }}</td>
+                    <td>{{ task.due_day }}</td>
+                    <td>{{ task.get_priority_display }}</td>
+                    <td>{{ task.get_status_display }}</td>
+                    <td>
+                        <a href="{% url 'task-edit' task.id %}">Edit</a> |
+                        <a href="{% url 'task-delete' task.id %}">Delete</a>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="5">No active tasks</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <!-- Completed Tasks Section -->
+        <h2>Completed Tasks</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Due Date</th>
+                    <th>Priority</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for task in completed_tasks %}
+                <tr>
+                    <td>{{ task.title }}</td>
+                    <td>{{ task.due_day }}</td>
+                    <td>{{ task.get_priority_display }}</td>
+                    <td>{{ task.get_status_display }}</td>
+                    <td>
+                        <a href="{% url 'task-delete' task.id %}">Delete</a>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="5">No completed tasks</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
