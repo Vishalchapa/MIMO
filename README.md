@@ -100,28 +100,26 @@ Using [Google Font](<https://fonts.google.com/>), we imported "Catamaran" to the
 __Browser View:__
 
 <details open>
-    <summary>Dashboard tablet and large screens for logged in users</summary>  
-    <img src="docs/wireframes/dashboard-tablet-and-large-screens.png">  
-</details>
-
-<details open>
     <summary>Home page tablet and large screens for logged out user</summary>  
     <img src="docs/wireframes/home-page-tablet-and-large-screens.png">  
 </details>
 
+<details open>
+    <summary>Dashboard tablet and large screens for logged in users</summary>  
+    <img src="docs/wireframes/dashboard-tablet-and-large-screens.png">  
+</details>
 
 __Phone View:__
-
-<details open>
-    <summary>Dashboard mobile for logged in users</summary>  
-    <img src="docs/wireframes/dashboard-for-mobile-screens.png">  
-</details>
 
 <details open>
     <summary>Home page mobile for logged out user</summary>  
     <img src="docs/wireframes/home-page-mobile.png">  
 </details>
 
+<details open>
+    <summary>Dashboard mobile for logged in users</summary>  
+    <img src="docs/wireframes/dashboard-for-mobile-screens.png">  
+</details>
 
 ## Final View
 
