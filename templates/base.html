@@ -32,44 +32,50 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-        
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 
 </head>
+
 <body>
     <header>
         <!-- Navigation menu -->
-        <nav >
+        <nav>
             <div style="background-color: rgb(251, 251, 251);">
-                <a href="{% url 'index' %}" aria-label="Website logo (Opens the home page)"><img src="{% static 'media/logo.png' %}" alt="A sleek checkmark within a vibrant purple waved circle" style="height: 10%; width: 10%;"><span> MIMO </span></a>
+                <a href="{% url 'index' %}" aria-label="Website logo (Opens the home page)"><img
+                        src="{% static 'media/logo.png' %}" alt="A sleek checkmark within a vibrant purple waved circle"
+                        style="height: 10%; width: 10%;"><span> MIMO </span></a>
 
-                    <ul style="text-align: end; list-style: none; margin-right: 10px;">
-                        <li>
-                            <a class="{% if request.path == main_url %}current{% endif %}" aria-current="page"
-                                href="{% url 'index' %}" aria-label="Opens the home page">Home</a>
-                        </li>
-                        {% if user.is_authenticated %}
-                        <li>
-                            <a class="{% if request.path == logout_url %}current{% endif %}" aria-current="page"
-                                href="{% url 'account_logout' %}" aria-label="Menu Logout link (Logs you out)">Logout</a>
-                        </li>
-                        {% else %}
-                        <li>
-                            <a class="{% if request.path == signup_url %}current{% endif %}" aria-current="page"
-                                href="{% url 'account_signup' %}" aria-label="Menu Register link (Opens the Register page)">Register</a>
-                        </li>
-                        <li>
-                            <a class="{% if request.path == login_url %}current{% endif %}" aria-current="page"
-                                href="{% url 'account_login' %}" aria-label="Menu Login link (Opens the Login page)">Login</a>
-                        </li>
-                        {% endif %}
-                    </ul>
-                
+                <ul style="text-align: end; list-style: none; margin-right: 10px;">
+                    <li>
+                        <a class="{% if request.path == main_url %}current{% endif %}" aria-current="page"
+                            href="{% url 'index' %}" aria-label="Opens the home page">Home</a>
+                    </li>
+                    {% if user.is_authenticated %}
+                    <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+                    <li>
+                        <a class="{% if request.path == logout_url %}current{% endif %}" aria-current="page"
+                            href="{% url 'account_logout' %}" aria-label="Menu Logout link (Logs you out)">Logout</a>
+                    </li>
+                    {% else %}
+                    <li>
+                        <a class="{% if request.path == signup_url %}current{% endif %}" aria-current="page"
+                            href="{% url 'account_signup' %}"
+                            aria-label="Menu Register link (Opens the Register page)">Register</a>
+                    </li>
+                    <li>
+                        <a class="{% if request.path == login_url %}current{% endif %}" aria-current="page"
+                            href="{% url 'account_login' %}"
+                            aria-label="Menu Login link (Opens the Login page)">Login</a>
+                    </li>
+                    {% endif %}
+                </ul>
+
             </div>
         </nav>
-    
+
     </header>
 
     <main>

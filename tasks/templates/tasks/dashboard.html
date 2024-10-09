@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container">
+        <h1>Your Task Dashboard</h1>
+        <!-- Search Form -->
+        <form method="GET" action="{% url 'dashboard' %}">
+            <input type="text" name="q" placeholder="Search tasks..." value="{{ query }}">
+            <button type="submit">Search</button>
+        </form>
+        <!-- Display Search Results if a search was made -->
+        {% if search_results %}
+        <h2>Search Results</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Due Date</th>
+                    <th>Priority</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for task in search_results %}
+                <tr>
+                    <td>{{ task.title }}</td>
+                    <td>{{ task.due_day }}</td>
+                    <td>{{ task.get_priority_display }}</td>
+                    <td>{{ task.get_status_display }}</td>
+                    <td>
+                        <a href="{% url 'task-edit' task.id %}">Edit</a> |
+                        <a href="{% url 'task-delete' task.id %}">Delete</a>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="5">No tasks found</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+        <br>
+         <!-- Button to show the Create Task form -->
+         <button id="create-task-btn">Create New Task</button>
+        <!-- Task Creation and Edit Form -->
+        <h2>{% if task_id %}Edit Task{% else %}Create a New Task{% endif %}</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">{% if task_id %}Save Changes{% else %}Create Task{% endif %}</button>
+        </form>
+        <!-- Active Tasks Section -->
+        <h2>Active Tasks</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Due Date</th>
+                    <th>Priority</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for task in active_tasks %}
+                <tr>
+                    <td>{{ task.title }}</td>
+                    <td>{{ task.due_day }}</td>
+                    <td>{{ task.get_priority_display }}</td>
+                    <td>{{ task.get_status_display }}</td>
+                    <td>
+                        <a href="{% url 'task-edit' task.id %}">Edit</a> |
+                        <a href="{% url 'task-delete' task.id %}">Delete</a>
+                        <a href="{% url 'task-complete' task.id %}">Mark as Complete</a>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="5">No active tasks</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <!-- Completed Tasks Section -->
+        <h2>Completed Tasks</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Due Date</th>
+                    <th>Priority</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for task in completed_tasks %}
+                <tr>
+                    <td>{{ task.title }}</td>
+                    <td>{{ task.due_day }}</td>
+                    <td>{{ task.get_priority_display }}</td>
+                    <td>{{ task.get_status_display }}</td>
+                    <td>
+                        <a href="{% url 'task-delete' task.id %}">Delete</a>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="5">No completed tasks</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
