@@ -7,5 +7,5 @@ class IndexPage(TemplateView):
 def about(request):
     return render(request, 'core/about.html')
 
-def faq(request):
+def how_to_use(request):
     return render(request, 'core/how_to_use.html')
