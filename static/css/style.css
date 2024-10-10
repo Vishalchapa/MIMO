@@ -281,6 +281,20 @@ body {
 }
 
 
+/* Priority-based coloring */
+.priority-high {
+    background-color: #ffdddd;
+}
+
+.priority-normal {
+    background-color: #fffbcc;
+}
+
+.priority-low {
+    background-color: #ddffdd;
+}
+
+
 
 
 
