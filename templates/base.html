@@ -3,6 +3,7 @@
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
+{% url 'account_change_password' as password_change_url %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -52,6 +53,8 @@
                     {% if user.is_authenticated %}
                     <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
                     <li><a href="{% url 'how_to_use' %}">How to Use</a></li>
+                    <li><a href="{% url 'account_change_password' %}">Change password</a></li>
+
                     <li>
                         <a class="{% if request.path == logout_url %}current{% endif %}" aria-current="page"
                             href="{% url 'account_logout' %}" aria-label="Menu Logout link (Logs you out)">Logout</a>
