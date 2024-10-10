@@ -49,17 +49,19 @@
                         style="height: 10%; width: 10%;"><span> MIMO </span></a>
 
                 <ul style="text-align: end; list-style: none; margin-right: 10px;">
-                    <li>
-                        <a class="{% if request.path == main_url %}current{% endif %}" aria-current="page"
-                            href="{% url 'index' %}" aria-label="Opens the home page">Home</a>
-                    </li>
                     {% if user.is_authenticated %}
                     <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+                    <li><a href="{% url 'how_to_use' %}">How to Use</a></li>
                     <li>
                         <a class="{% if request.path == logout_url %}current{% endif %}" aria-current="page"
                             href="{% url 'account_logout' %}" aria-label="Menu Logout link (Logs you out)">Logout</a>
                     </li>
                     {% else %}
+                    <li>
+                        <a class="{% if request.path == main_url %}current{% endif %}" aria-current="page"
+                            href="{% url 'index' %}" aria-label="Opens the home page">Home</a>
+                    </li>
+                    <li><a href="{% url 'about' %}">About</a></li>
                     <li>
                         <a class="{% if request.path == signup_url %}current{% endif %}" aria-current="page"
                             href="{% url 'account_signup' %}"
