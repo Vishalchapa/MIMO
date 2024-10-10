@@ -9,7 +9,7 @@
 
 /* body */
 body {
-    background-color: #fff;
+    background-color: #f7f2f2;
     font-family: 'Catamaran', sans-serif;
 }
 
@@ -100,6 +100,29 @@ body {
 .cta-section {
     padding: 60px 20px;
     text-align: center;
+}
+
+#description-section {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin: 20px 200px;
+    background-color: #f7f2f2;
+}
+
+#description-section h2 {
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+#description-section h1,
+#description-section h2 {
+    margin: 30px;
+}
+
+#description-section img {
+    width: auto;
+    height: 40vh;
 }
 
 #key-features-section .features-list {
