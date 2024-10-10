@@ -37,6 +37,8 @@ def dashboard(request, task_id=None):
     query = request.GET.get('q')
     if query:
         search_results = Task.objects.filter(user=request.user, title__icontains=query)
+        if not search_results.exists():  # This checks if no tasks match the search
+            search_results = []  # This will return an empty list to indicate no results
     else:
         search_results = None  # No search performed
     
