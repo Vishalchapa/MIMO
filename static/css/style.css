@@ -1,6 +1,77 @@
-body {
-    background-color: aqua;
+@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@100..900&family=Lora:wght@400;700&display=swap");
+
+/* Universal selector */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+body {
+    background-color: #fff;
+    font-family: 'Catamaran', sans-serif;
+}
+
+#main-nav {
+    background-color: #f5f5f5;
+    padding: 10px 20px;
+}
+
+#main-nav .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#main-nav .logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+}
+
+#main-nav .logo {
+    width: 50px;
+    height: 50px;
+}
+
+#main-nav #nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#main-nav #nav-links li {
+    display: inline;
+    margin-right: 20px;
+}
+
+#main-nav #nav-links a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .priority-high {
     background-color: red;
