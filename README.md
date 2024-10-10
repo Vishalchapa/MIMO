@@ -139,6 +139,7 @@ __Phone View:__
 # Features 
 
 User Authentication
+
 ![image](https://github.com/user-attachments/assets/1b0f0b3c-2476-4589-8872-ea132a009ea1)
 
 
@@ -149,11 +150,14 @@ Task Management
 Users can create, edit, and delete tasks easily.
 Each task can include details like due dates and priorities, helping users organize and plan their work.
 Task Status Tracking
+
+
 ![image](https://github.com/user-attachments/assets/c082419b-5866-4596-9ab5-97e3777c9748)
 
 
 
 Interactive actions like task creation, deletion, login, and logout trigger toast notifications, providing immediate feedback on success or failure.
+
 ![image](https://github.com/user-attachments/assets/c80b0f46-8345-40bc-8bbe-c243327ac116)
 
 Users can search for specific tasks by name or keyword, making it quick and easy to find a task, especially in large lists.
@@ -163,6 +167,7 @@ Responsive Design
 
 
 The app is fully responsive, ensuring that users can access and interact with it seamlessly on desktops, tablets, or mobile devices.
+
 ![image](https://github.com/user-attachments/assets/f6ac031b-aded-4ffa-ad91-2f7f2a42d544)
 
 
