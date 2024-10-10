@@ -140,7 +140,7 @@ __Phone View:__
 
 User Authentication
 ![image](https://github.com/user-attachments/assets/1b0f0b3c-2476-4589-8872-ea132a009ea1)
-![image](https://github.com/user-attachments/assets/c80b0f46-8345-40bc-8bbe-c243327ac116)
+
 
 Users can securely register, log in, and log out to manage their personal task lists.
 Each account is protected to ensure tasks are private and accessible only by the owner.
@@ -149,9 +149,12 @@ Task Management
 Users can create, edit, and delete tasks easily.
 Each task can include details like due dates and priorities, helping users organize and plan their work.
 Task Status Tracking
-![image](https://github.com/user-attachments/assets/a35c7bce-537b-463d-9050-76f0a72f669d)
+![image](https://github.com/user-attachments/assets/c082419b-5866-4596-9ab5-97e3777c9748)
+
+
+
 Interactive actions like task creation, deletion, login, and logout trigger toast notifications, providing immediate feedback on success or failure.
-![image](https://github.com/user-attachments/assets/1f062671-ca18-48da-9242-b26d12589eb1)
+![image](https://github.com/user-attachments/assets/c80b0f46-8345-40bc-8bbe-c243327ac116)
 
 Tasks are categorized as Pending, Completed, or Archived, giving users a clear view of what’s left to do, what’s finished, and what’s no longer relevant.
 Filtering & Sorting
