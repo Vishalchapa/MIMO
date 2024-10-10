@@ -69,6 +69,31 @@ body {
     margin-bottom: 30px;
 }
 
+.cta-buttons a {
+    display: inline-block;
+    padding: 10px 30px;
+    font-size: 1rem;
+    margin: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+}
+
+.cta-primary {
+    background-color: #800ea2;
+}
+
+.cta-secondary {
+    background-color: #6c757d;
+}
+
+#description-section,
+#key-features-section,
+.cta-section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
 
 
 
