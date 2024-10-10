@@ -42,7 +42,7 @@
                     </select>
                 </form></td>
             <td class="task-actions">
-                <a href="{% url 'task-edit' task.id %}"><i class="fa-solid fa-pen-to-square"></i></a> |
+                <a href="{% url 'task-edit' task.id %}" class="btn-edit"><i class="fa-solid fa-pen-to-square"></i></a> |
                 <a href="{% url 'task-delete' task.id %}"><i class="fa-solid fa-trash-can"></i></a>
             </td>
             </tr>
@@ -59,12 +59,13 @@
     <!-- Task Creation and Edit Form -->
     <h2 class="form-title">{% if task_id %}Edit Task{% else %}Create a New Task{% endif %}</h2>
     <!-- Button to show the Create Task form -->
-    <button id="create-task-btn" class="btn btn-create">Create New Task</button>
-    <form method="post" id="createTaskForm">
+    <button id="create-task-btn" class="btn btn-create" style="{% if task_id %}display: none; {% else %} display: inline; {% endif %}">Create New Task</button>
+    <form method="post" id="createTaskForm" style="{% if task_id %}display: block; {% else %} display: none; {% endif %}">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="btn btn-submit">{% if task_id %}Save Changes{% else %}Create Task{% endif %}</button>
+        <button type="submit" class="btn btn-submit" id="submitButton">{% if task_id %}Save Changes{% else %}Create Task{% endif %}</button>
     </form>
+
     <!-- Active Tasks Section -->
     <h2 class="section-title">Active Tasks</h2>
     <table id="active-tasks-table" class="tasks-table">
@@ -99,7 +100,7 @@
                     </select>
                 </form></td>
             <td class="task-actions">
-                    <a href="{% url 'task-edit' task.id %}"><i class="fa-solid fa-pen-to-square"></i></a> |
+                    <a href="{% url 'task-edit' task.id %}" class="btn-edit"><i class="fa-solid fa-pen-to-square"></i></a> |
                     <a href="{% url 'task-delete' task.id %}"><i class="fa-solid fa-trash-can"></i></a> |
                     <a href="{% url 'task-complete' task.id %}"><i class="fa-solid fa-square-check"></i></a>
                 </td>
