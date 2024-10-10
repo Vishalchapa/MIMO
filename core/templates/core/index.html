@@ -7,22 +7,24 @@
     <div class="container">
         <h1>Boost Your Productivity</h1>
         <p>Plan, track, and accomplish your tasks effortlessly.</p>
-        <a href="{% url 'account_signup' %}" class="btn btn-primary">Start for free</a>
+        <div class="cta-buttons">
+            <a href="{% url 'account_signup' %}" class="cta-primary">Sign Up</a>
+            <a href="{% url 'about' %}" class="cta-secondary">Learn More</a>
+        </div>
     </div>
 </div>
 
-<div id="description-section">
+<div id="description-section"  class="section">
     <div class="container">
         <h2>Task Management Made Simple</h2>
         <p>Welcome to Mimo – the easiest way to take control of your to-do list and make every day productive. Whether
             you're juggling personal tasks or managing a team, our intuitive platform helps you stay organized, track
             your progress, and celebrate your achievements.</p>
-        <a href="{% url 'account_signup' %}" class="btn btn-secondary">Start for free</a>
     </div>
 </div>
 
 <!-- We will use font awesome here below -->
-<div id="how-it-works-section">
+<div id="how-it-works-section" class="section">
     <div class="container">
         <h2>How It Works</h2>
         <div class="how-it-works-steps">
@@ -42,7 +44,7 @@
     </div>
 </div>
 
-<div id="key-features-section">
+<div id="key-features-section"  class="section">
     <div class="container">
         <h2>Key Features</h2>
         <ul class="features-list">
