@@ -138,77 +138,67 @@ __Phone View:__
 
 # Features 
 
-Detailing the existing and planned features and the value they bring.
+User Authentication
 
-## Existing Features
-
- __Navbar Menu__
-
-- For better user experience, navigation links are located to right side of the navbar.
-
-![Navbar on desktop view](img.png)
-
-- For the small devices we added burger menu and logo with the name of the app to the every page.
-
-![Navbar burger menu](img.png)
-
-__Logged in/logged out user message__
-
-- The user will be informed whether they are logged in or not.
-
-![Message](img.png)
-
-__Toast Messages__
-
-- When you interact with the website, you'll receive toast messages that inform you about the success or failure of your actions. Whether you’re creating new task or deleting task, registering, logging in or out, these notifications will provide immediate feedback on your activities.
-
-![Toast message](img.png)
-
-__Authorisation__
-
-- Users can register, log in, and log out. Once authorized, they can access features such as adding new tasks, track them, edit and delete.
-
-<details open>
-    <summary>Sign Up</summary>  
-    <img src="">  
-</details>
-
-<details open>
-    <summary>Log In</summary>  
-    <img src="">  
-</details>
-
-<details>
-    <summary>Log Out</summary>  
-    <img src="">  
-</details>
-
-<details>
-    <summary>Authorized user</summary>  
-    <img src="">  
-</details>
-
-<details>
-    <summary>Non-authorized user</summary>  
-    <img src="">  
-</details>
+![image](https://github.com/user-attachments/assets/1b0f0b3c-2476-4589-8872-ea132a009ea1)
 
 
-__The Footer__ 
+Users can securely register, log in, and log out to manage their personal task lists.
+Each account is protected to ensure tasks are private and accessible only by the owner.
+Task Management
 
-- The footer section includes links to the relevant social media sites of MIMO app. The links will open to a new tab to allow easy navigation for the user. 
-- The footer is valuable to the user as it encourages them to keep connected via social media
+Interactive actions like task creation, deletion, login, and logout trigger toast notifications, providing immediate feedback on success or failure.
 
-![Footer](img.png)
+![image](https://github.com/user-attachments/assets/c80b0f46-8345-40bc-8bbe-c243327ac116)
+
+Users can create, edit, and delete tasks easily.
+Each task can include details like due dates and priorities, helping users organize and plan their work.
+Task Status Tracking
+
+
+![image](https://github.com/user-attachments/assets/c082419b-5866-4596-9ab5-97e3777c9748)
+
+
+
+
+
+Users can search for specific tasks by name or keyword, making it quick and easy to find a task, especially in large lists.
+Responsive Design
+
+![image](https://github.com/user-attachments/assets/de3b135d-2056-4c58-948f-78512b547eff)
+
+
+The app is fully responsive, ensuring that users can access and interact with it seamlessly on desktops, tablets, or mobile devices.
+
+![image](https://github.com/user-attachments/assets/f6ac031b-aded-4ffa-ad91-2f7f2a42d544)
+
+
+All tasks are securely saved and persist across sessions, so users don’t lose their data when they log out or switch devices.
+User-Friendly Interface
+
+The interface is designed for simplicity and ease of use, allowing users to manage their tasks without needing complex instructions or training.
+
+# Features to consider
+
+Automated reminders keep users informed about upcoming tasks and deadlines, reducing the chance of missing important items.
+Data Persistence
 
 ## Features Left to Implement
+
+Tasks are categorized as Pending, Completed, or Archived, giving users a clear view of what’s left to do, what’s finished, and what’s no longer relevant.
+Filtering & Sorting
+
+Users can filter tasks by status, such as Pending or Completed, to focus on specific task categories.
+Tasks can be sorted by Due Date, Priority, or Creation Date, helping users manage their workload based on urgency or importance.
+Search Functionality
+
 
 # Database Schema - Entity Relationship Diagram
 
 The Entity-Relationship Diagram (ERD) for MIMO showcases the connections between users, tasks and articles. It also highlights that only admin or staff users have the privilege to add content to the home page. 
 This diagram is crucial in visualizing the relationships among various models within the PostgreSQL database.
 
-![ERD](img.png)
+![image](https://github.com/user-attachments/assets/9c70a3f1-11b7-4317-822f-079e8b39755b)
 
 The above ERD was generated using Python Extension - pygraphviz and pydotplus. 
 Documentation at [Django-extensions>Graph models](<https://django-extensions.readthedocs.io/en/latest/graph_models.html>).
