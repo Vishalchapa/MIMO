@@ -22,15 +22,29 @@
         </thead>
         <tbody>
             {% for task in search_results %}
-            <tr>
+            <tr class="priority-{% if task.priority == 'High' %}high{% elif task.priority == 'Normal' %}normal{% elif task.priority == 'Low' %}low{% endif %}">
                 <td>{{ task.title }}</td>
                 <td>{{ task.due_day }}</td>
-                <td>{{ task.get_priority_display }}</td>
-                <td>{{ task.get_status_display }}</td>
-                <td>
-                    <a href="{% url 'task-edit' task.id %}">Edit</a> |
-                    <a href="{% url 'task-delete' task.id %}">Delete</a>
-                </td>
+                <td><form action="{% url 'change-priority' task.id %}" method="post" class="priority-form">
+                    {% csrf_token %}
+                    <select name="priority" onchange="this.form.submit()">
+                        <option value="High" {% if task.priority == "High" %}selected{% endif %}>High</option>
+                        <option value="Normal" {% if task.priority == "Normal" %}selected{% endif %}>Normal</option>
+                        <option value="Low" {% if task.priority == "Low" %}selected{% endif %}>Low</option>
+                    </select>
+                </form></td>
+                <td><form action="{% url 'change-status' task.id %}" method="post" class="status-form">
+                    {% csrf_token %}
+                    <select name="status" onchange="this.form.submit()">
+                        <option value="0" {% if task.status == 0 %}selected{% endif %}>Not Started</option>
+                        <option value="1" {% if task.status == 1 %}selected{% endif %}>In Progress</option>
+                        <option value="2" {% if task.status == 2 %}selected{% endif %}>Completed</option>
+                    </select>
+                </form></td>
+            <td>
+                <a href="{% url 'task-edit' task.id %}"><i class="fa-solid fa-pen-to-square"></i></a> |
+                <a href="{% url 'task-delete' task.id %}"><i class="fa-solid fa-trash-can"></i></a>
+            </td>
             </tr>
             {% empty %}
             <tr>
@@ -64,17 +78,30 @@
             </tr>
         </thead>
         <tbody>
-            {% for task in active_tasks %}
-            <tr
-                class="priority-{% if task.priority == 'High' %}high{% elif task.priority == 'Normal' %}normal{% elif task.priority == 'Low' %}low{% endif %}">
+           {% for task in active_tasks %}
+            <tr class="priority-{% if task.priority == 'High' %}high{% elif task.priority == 'Normal' %}normal{% elif task.priority == 'Low' %}low{% endif %}">
                 <td>{{ task.title }}</td>
                 <td>{{ task.due_day }}</td>
-                <td>{{ task.get_priority_display }}</td>
-                <td>{{ task.get_status_display }}</td>
-                <td>
-                    <a href="{% url 'task-edit' task.id %}">Edit</a> |
-                    <a href="{% url 'task-delete' task.id %}">Delete</a>
-                    <a href="{% url 'task-complete' task.id %}">Mark as Complete</a>
+                <td><form action="{% url 'change-priority' task.id %}" method="post" class="priority-form">
+                    {% csrf_token %}
+                    <select name="priority" onchange="this.form.submit()">
+                        <option value="High" {% if task.priority == "High" %}selected{% endif %}>High</option>
+                        <option value="Normal" {% if task.priority == "Normal" %}selected{% endif %}>Normal</option>
+                        <option value="Low" {% if task.priority == "Low" %}selected{% endif %}>Low</option>
+                    </select>
+                </form></td>
+                <td><form action="{% url 'change-status' task.id %}" method="post" class="status-form">
+                    {% csrf_token %}
+                    <select name="status" onchange="this.form.submit()">
+                        <option value="0" {% if task.status == 0 %}selected{% endif %}>Not Started</option>
+                        <option value="1" {% if task.status == 1 %}selected{% endif %}>In Progress</option>
+                        <option value="2" {% if task.status == 2 %}selected{% endif %}>Completed</option>
+                    </select>
+                </form></td>
+            <td>
+                    <a href="{% url 'task-edit' task.id %}"><i class="fa-solid fa-pen-to-square"></i></a> |
+                    <a href="{% url 'task-delete' task.id %}"><i class="fa-solid fa-trash-can"></i></a> |
+                    <a href="{% url 'task-complete' task.id %}"><i class="fa-solid fa-square-check"></i></a>
                 </td>
             </tr>
             {% empty %}
@@ -105,7 +132,7 @@
                 <td>{{ task.get_priority_display }}</td>
                 <td>{{ task.get_status_display }}</td>
                 <td>
-                    <a href="{% url 'task-delete' task.id %}">Delete</a>
+                    <a href="{% url 'task-delete' task.id %}"><i class="fa-solid fa-trash-can"></i></a>
                 </td>
             </tr>
             {% empty %}
