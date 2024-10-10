@@ -8,7 +8,6 @@ from django.urls import reverse
 
 # Create your views here.
 @login_required
-
 def dashboard(request, task_id=None):
     # Get active and completed tasks for the user
     active_tasks = Task.objects.filter(user=request.user, status__in=[0, 1])  # 0: Not Started, 1: In Progress
@@ -34,7 +33,7 @@ def dashboard(request, task_id=None):
         form = TaskForm(instance=task)
     
     # Handle search query
-    query = request.GET.get('q')
+    query = request.GET.get('q', '').strip()
     if query:
         search_results = Task.objects.filter(user=request.user, title__icontains=query)
         if not search_results.exists():  # This checks if no tasks match the search
