@@ -311,6 +311,29 @@ body {
 
 
 
+/* Hide the Create Task form initially */
+#createTaskForm {
+    display: none;
+}
+
+.priority-select, .status-select {
+    padding: 5px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+.task-actions a i {
+    margin-right: 5px;
+}
+
+
+
+
 
 
 
