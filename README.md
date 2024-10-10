@@ -147,6 +147,10 @@ Users can securely register, log in, and log out to manage their personal task l
 Each account is protected to ensure tasks are private and accessible only by the owner.
 Task Management
 
+Interactive actions like task creation, deletion, login, and logout trigger toast notifications, providing immediate feedback on success or failure.
+
+![image](https://github.com/user-attachments/assets/c80b0f46-8345-40bc-8bbe-c243327ac116)
+
 Users can create, edit, and delete tasks easily.
 Each task can include details like due dates and priorities, helping users organize and plan their work.
 Task Status Tracking
@@ -156,9 +160,7 @@ Task Status Tracking
 
 
 
-Interactive actions like task creation, deletion, login, and logout trigger toast notifications, providing immediate feedback on success or failure.
 
-![image](https://github.com/user-attachments/assets/c80b0f46-8345-40bc-8bbe-c243327ac116)
 
 Users can search for specific tasks by name or keyword, making it quick and easy to find a task, especially in large lists.
 Responsive Design
