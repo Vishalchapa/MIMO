@@ -87,6 +87,10 @@ body {
     color: white;
 }
 
+.btn {
+    color: #fff;
+}
+
 .cta-primary {
     background-color: #800ea2;
 }
@@ -199,70 +203,50 @@ body {
     color: black;
 }
 
+/* ----------------------------------------- Dashboard styling ------------------------------------- */
 
-/* Media query for mobile sized screens */
-@media (max-width: 768px) {
-    .how-it-works-steps {
-        flex-direction: column;
-        align-items: center;
-    }
-    .step {
-        flex-basis: 100%; /* Each step takes full width on mobile */
-        max-width: none;
-        margin-bottom: 30px;
-    }
-
-    #description-section {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        margin: 10px 10px;
-    }
-    
-    #description-section img {
-        width: auto;
-        height: 40vh;
-    }
+/* General Container */
+#dashboard-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
+/* Section Titles */
+.dashboard-title, .section-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
 
+/* Forms */
+#search-form, #createTaskForm {
+    margin-bottom: 20px;
+}
 
+#search-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
 
+.btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.priority-high {
-    background-color: red;
+.btn-search {
+    background-color: #4CAF50;
     color: white;
 }
 
-.priority-normal {
-    background-color: orange;
+.btn-create, .btn-submit {
+    background-color: #007bff;
     color: white;
-}
-
-.priority-low {
-    background-color: blue;
-    color: white;
-}
-
-#createTaskForm {
-    display: none;
+    margin-top: 10px;
 }
