@@ -64,7 +64,7 @@
             </thead>
             <tbody>
                 {% for task in active_tasks %}
-                <tr>
+                <tr class="priority-{% if task.priority == 'High' %}high{% elif task.priority == 'Normal' %}normal{% elif task.priority == 'Low' %}low{% endif %}">
                     <td>{{ task.title }}</td>
                     <td>{{ task.due_day }}</td>
                     <td>{{ task.get_priority_display }}</td>
@@ -96,7 +96,7 @@
             </thead>
             <tbody>
                 {% for task in completed_tasks %}
-                <tr>
+                <tr class="priority-{% if task.priority == 'High' %}high{% elif task.priority == 'Normal' %}normal{% elif task.priority == 'Low' %}low{% endif %}">
                     <td>{{ task.title }}</td>
                     <td>{{ task.due_day }}</td>
                     <td>{{ task.get_priority_display }}</td>
