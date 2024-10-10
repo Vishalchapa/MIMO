@@ -245,12 +245,12 @@ body {
 
 .btn-search {
     background-color: #4CAF50;
-    color: white;
+    color: #fff;
 }
 
 .btn-create, .btn-submit {
     background-color: #007bff;
-    color: white;
+    color: #fff;
     margin-top: 10px;
 }
 
@@ -333,10 +333,6 @@ body {
 
 
 
-
-
-
-
 /* Media query for mobile sized screens */
 @media (max-width: 768px) {
     .how-it-works-steps {
@@ -359,5 +355,49 @@ body {
     #description-section img {
         width: auto;
         height: 40vh;
+    }
+
+
+/* ------ Dashboard styling for mobiles and tablets ----- */
+
+
+    #dashboard-container {
+        padding: 10px;
+    }
+
+    #search-form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #search-form input, 
+    #search-form button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #search-results-table, #active-tasks-table, #completed-tasks-table {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .tasks-table th, .tasks-table td {
+        padding: 5px;
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .task-actions {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .task-actions a {
+        margin-bottom: 10px;
+        font-size: 1rem;
     }
 }
