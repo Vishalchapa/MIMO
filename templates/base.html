@@ -78,6 +78,15 @@
 
     </header>
 
+    <!-- Confirmation message function -->
+    {% if messages %}
+    <ul id="confirmation-message">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+            {% endfor %}
+    </ul>
+    {% endif %}
+
     <main>
         {% block content %}
 
