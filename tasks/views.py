@@ -8,7 +8,6 @@ from django.urls import reverse
 
 # Create your views here.
 @login_required
-
 def dashboard(request, task_id=None):
     # Get active and completed tasks for the user
     active_tasks = Task.objects.filter(user=request.user, status__in=[0, 1])  # 0: Not Started, 1: In Progress
@@ -34,9 +33,11 @@ def dashboard(request, task_id=None):
         form = TaskForm(instance=task)
     
     # Handle search query
-    query = request.GET.get('q')
+    query = request.GET.get('q', '').strip()
     if query:
         search_results = Task.objects.filter(user=request.user, title__icontains=query)
+        if not search_results.exists():  # This checks if no tasks match the search
+            search_results = []  # This will return an empty list to indicate no results
     else:
         search_results = None  # No search performed
     
@@ -68,3 +69,13 @@ def mark_as_complete(request, task_id):
     task.save()
     # Redirect back to the dashboard
     return HttpResponseRedirect(reverse('dashboard'))
+
+
+@login_required
+def delete_task(request, task_id):
+    task = get_object_or_404(Task, id=task_id, user=request.user)
+    if request.method == 'POST':
+        task.delete()
+        return redirect('dashboard')
+
+    return render(request, 'tasks/task_confirm_delete.html', {'task': task})
