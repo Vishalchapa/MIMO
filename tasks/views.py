@@ -70,12 +70,22 @@ def mark_as_complete(request, task_id):
     # Redirect back to the dashboard
     return HttpResponseRedirect(reverse('dashboard'))
 
+@login_required
+def change_priority(request, task_id):
+    if request.method == 'POST':
+        task = get_object_or_404(Task, id=task_id, user=request.user)
+        new_priority = request.POST.get('priority')
+        if new_priority in ['High', 'Normal', 'Low']:
+            task.priority = new_priority
+            task.save()
+    return redirect('dashboard')
 
 @login_required
-def delete_task(request, task_id):
-    task = get_object_or_404(Task, id=task_id, user=request.user)
+def change_status(request, task_id):
     if request.method == 'POST':
-        task.delete()
-        return redirect('dashboard')
-
-    return render(request, 'tasks/task_confirm_delete.html', {'task': task})
+        task = get_object_or_404(Task, id=task_id, user=request.user)
+        new_status = request.POST.get('status')
+        if new_status in ['0', '1', '2']:
+            task.status = int(new_status)
+            task.save()
+    return redirect('dashboard')
