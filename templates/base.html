@@ -41,15 +41,16 @@
 </head>
 
 <body>
-    <header>
+    <header id="main-header">
         <!-- Navigation menu -->
-        <nav>
-            <div style="background-color: rgb(251, 251, 251);">
-                <a href="{% url 'index' %}" aria-label="Website logo (Opens the home page)"><img
-                        src="{% static 'media/logo.png' %}" alt="A sleek checkmark within a vibrant purple waved circle"
-                        style="height: 10%; width: 10%;"><span> MIMO </span></a>
+        <nav id="main-nav">
+            <div class="nav-container">
+                <a href="{% url 'index' %}" class="logo-link">
+                    <img src="{% static 'media/logo.png' %}" alt="Mimo Logo" class="logo">
+                    <span>MIMO</span>
+                </a>
 
-                <ul style="text-align: end; list-style: none; margin-right: 10px;">
+                <ul id="nav-links">
                     {% if user.is_authenticated %}
                     <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
                     <li><a href="{% url 'how_to_use' %}">How to Use</a></li>
@@ -98,7 +99,7 @@
         {% endblock %}
     </main>
 
-    <footer>
+    <footer id="main-footer">
         <ul id="socials">
             <li><a href="http://facebook.com" target="_blank" rel="noopener"
                     aria-label="Visit our Facebook page (Opens Facebook website on a new browser)"><i
