@@ -41,11 +41,12 @@
     </table>
     {% endif %}
     <br>
-    <!-- Button to show the Create Task form -->
-    <button id="create-task-btn">Create New Task</button>
+    
     <!-- Task Creation and Edit Form -->
     <h2>{% if task_id %}Edit Task{% else %}Create a New Task{% endif %}</h2>
-    <form method="post">
+    <!-- Button to show the Create Task form -->
+    <button id="create-task-btn">Create New Task</button>
+    <form method="post" id="createTaskForm">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">{% if task_id %}Save Changes{% else %}Create Task{% endif %}</button>
