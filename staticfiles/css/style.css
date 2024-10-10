@@ -9,7 +9,7 @@
 
 /* body */
 body {
-    background-color: #fff;
+    background-color: #f7f2f2;
     font-family: 'Catamaran', sans-serif;
 }
 
@@ -30,6 +30,11 @@ body {
     align-items: center;
     text-decoration: none;
     color: black;
+}
+
+.logo-text {
+    font-size: 2rem;
+    font-weight: 700;
 }
 
 #main-nav .logo {
@@ -82,6 +87,10 @@ body {
     color: white;
 }
 
+.btn {
+    color: #fff;
+}
+
 .cta-primary {
     background-color: #800ea2;
 }
@@ -90,6 +99,7 @@ body {
     background-color: #6c757d;
 }
 
+/* Welcome section */
 #description-section,
 #key-features-section,
 .cta-section {
@@ -97,6 +107,69 @@ body {
     text-align: center;
 }
 
+#description-section {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin: 20px 200px;
+    background-color: #f7f2f2;
+}
+
+#description-section h2 {
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+#description-section h1,
+#description-section h2 {
+    margin: 30px;
+}
+
+#description-section img {
+    width: auto;
+    height: 40vh;
+}
+
+/* How it works section */
+#how-it-works-section {
+    background-color: #f7f9fb;
+    padding: 50px 20px;
+}
+
+#how-it-works-section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.how-it-works-steps {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Ensures it wraps for smaller screens */
+}
+
+.step {
+    flex-basis: 30%; /* Each step takes about 30% of the container */
+    max-width: 250px;
+}
+
+.step i {
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.step p {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #333;
+}
+
+
+/* Key Features section */
 #key-features-section .features-list {
     list-style: none;
     padding: 0;
@@ -130,42 +203,201 @@ body {
     color: black;
 }
 
+/* ----------------------------------------- Dashboard styling ------------------------------------- */
 
 
 
 
+/* General Container */
+#dashboard-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Section Titles */
+.dashboard-title, .section-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Forms */
+#search-form, #createTaskForm {
+    margin-bottom: 20px;
+}
+
+#search-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-search {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+.btn-create, .btn-submit {
+    background-color: #007bff;
+    color: #fff;
+    margin-top: 10px;
+}
+
+/* Task Tables */
+.tasks-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.tasks-table th, .tasks-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.tasks-table th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+.tasks-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.tasks-table tr:hover {
+    background-color: #f1f1f1;
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* Priority-based coloring */
 .priority-high {
-    background-color: red;
-    color: white;
+    background-color: #ffdddd;
 }
 
 .priority-normal {
-    background-color: orange;
-    color: white;
+    background-color: #fffbcc;
 }
 
 .priority-low {
-    background-color: blue;
-    color: white;
+    background-color: #ddffdd;
 }
 
+/* Action buttons */
+.task-actions a {
+    margin: 0 5px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.task-actions a:hover {
+    color: #0056b3;
+}
+
+.fa-pen-to-square, .fa-trash-can, .fa-square-check {
+    font-size: 1.2rem;
+}
+
+
+
+/* Hide the Create Task form initially */
 #createTaskForm {
     display: none;
+}
+
+.priority-select, .status-select {
+    padding: 5px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+.task-actions a i {
+    margin-right: 5px;
+}
+
+
+
+/* Media query for mobile sized screens */
+@media (max-width: 768px) {
+    .how-it-works-steps {
+        flex-direction: column;
+        align-items: center;
+    }
+    .step {
+        flex-basis: 100%; /* Each step takes full width on mobile */
+        max-width: none;
+        margin-bottom: 30px;
+    }
+
+    #description-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin: 10px 10px;
+    }
+    
+    #description-section img {
+        width: auto;
+        height: 40vh;
+    }
+
+
+/* ------ Dashboard styling for mobiles and tablets ----- */
+
+
+    #dashboard-container {
+        padding: 10px;
+    }
+
+    #search-form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #search-form input, 
+    #search-form button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #search-results-table, #active-tasks-table, #completed-tasks-table {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .tasks-table th, .tasks-table td {
+        padding: 5px;
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .task-actions {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .task-actions a {
+        margin-bottom: 10px;
+        font-size: 1rem;
+    }
 }
