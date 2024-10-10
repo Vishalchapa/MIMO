@@ -1,3 +1,18 @@
 body {
     background-color: aqua;
 }
+
+.priority-high {
+    background-color: red;
+    color: white;
+}
+
+.priority-normal {
+    background-color: orange;
+    color: white;
+}
+
+.priority-low {
+    background-color: blue;
+    color: white;
+}
