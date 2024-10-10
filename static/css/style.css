@@ -52,6 +52,24 @@ body {
     font-weight: bold;
 }
 
+#hero-section {
+    background-color: #f7f9fb;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+#hero-section h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#hero-section p {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+}
+
+
 
 
 
