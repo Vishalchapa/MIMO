@@ -8,8 +8,12 @@
         <h1>Boost Your Productivity</h1>
         <p>Plan, track, and accomplish your tasks effortlessly.</p>
         <div class="cta-buttons">
+            {% if user.is_authenticated %}
+            <a href="{% url 'about' %}" class="cta-secondary">Learn More</a>
+            {% else %}
             <a href="{% url 'account_signup' %}" class="cta-primary">Sign Up</a>
             <a href="{% url 'about' %}" class="cta-secondary">Learn More</a>
+            {% endif %}
         </div>
     </div>
 </div>
@@ -72,7 +76,11 @@
         <h2>Ready to Boost Your Productivity?</h2>
         <p>Join Mimo today and take control of your tasks like never before. It's fast, easy, and free to get started!
         </p>
+        {% if user.is_authenticated %}
+        <a href="{% url 'dashboard' %}" class="cta-primary">Go to Dashboard</a>
+        {% else %}
         <a href="{% url 'account_signup' %}" class="cta-primary">Get started for free</a>
+        {% endif %}
     </div>
 </div>
 
