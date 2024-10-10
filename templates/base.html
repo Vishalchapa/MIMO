@@ -47,7 +47,7 @@
             <div class="nav-container">
                 <a href="{% url 'index' %}" class="logo-link">
                     <img src="{% static 'media/logo.png' %}" alt="Mimo Logo" class="logo">
-                    <span>MIMO</span>
+                    <span class="logo-text">MIMO</span>
                 </a>
 
                 <ul id="nav-links">
@@ -119,6 +119,10 @@
         </ul>
         <p>&copy; 2024 MIMO. All rights reserved.</p>
     </footer>
+
+    <!-- Font Awesome Script -->
+    <script src="https://kit.fontawesome.com/f40ce1e09e.js" crossorigin="anonymous"></script>
+    {% block extra_js %}{% endblock %}
 
     <script src="{% static 'js/script.js' %}"></script>    
 </body>
