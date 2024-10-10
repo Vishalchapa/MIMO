@@ -145,12 +145,12 @@ User Authentication
 Users can securely register, log in, and log out to manage their personal task lists.
 Each account is protected to ensure tasks are private and accessible only by the owner.
 Task Management
-![image](https://github.com/user-attachments/assets/701f778b-db96-4a91-a324-121342d9098b)
 
 Users can create, edit, and delete tasks easily.
 Each task can include details like due dates and priorities, helping users organize and plan their work.
 Task Status Tracking
 ![image](https://github.com/user-attachments/assets/a35c7bce-537b-463d-9050-76f0a72f669d)
+Interactive actions like task creation, deletion, login, and logout trigger toast notifications, providing immediate feedback on success or failure.
 ![image](https://github.com/user-attachments/assets/1f062671-ca18-48da-9242-b26d12589eb1)
 
 Tasks are categorized as Pending, Completed, or Archived, giving users a clear view of what’s left to do, what’s finished, and what’s no longer relevant.
