@@ -156,18 +156,15 @@ Task Status Tracking
 Interactive actions like task creation, deletion, login, and logout trigger toast notifications, providing immediate feedback on success or failure.
 ![image](https://github.com/user-attachments/assets/c80b0f46-8345-40bc-8bbe-c243327ac116)
 
-Tasks are categorized as Pending, Completed, or Archived, giving users a clear view of what’s left to do, what’s finished, and what’s no longer relevant.
-Filtering & Sorting
-
-Users can filter tasks by status, such as Pending or Completed, to focus on specific task categories.
-Tasks can be sorted by Due Date, Priority, or Creation Date, helping users manage their workload based on urgency or importance.
-Search Functionality
-
 Users can search for specific tasks by name or keyword, making it quick and easy to find a task, especially in large lists.
 Responsive Design
 
+![image](https://github.com/user-attachments/assets/de3b135d-2056-4c58-948f-78512b547eff)
+
+
 The app is fully responsive, ensuring that users can access and interact with it seamlessly on desktops, tablets, or mobile devices.
-Notifications
+![image](https://github.com/user-attachments/assets/f6ac031b-aded-4ffa-ad91-2f7f2a42d544)
+
 
 All tasks are securely saved and persist across sessions, so users don’t lose their data when they log out or switch devices.
 User-Friendly Interface
@@ -180,6 +177,14 @@ Automated reminders keep users informed about upcoming tasks and deadlines, redu
 Data Persistence
 
 ## Features Left to Implement
+
+Tasks are categorized as Pending, Completed, or Archived, giving users a clear view of what’s left to do, what’s finished, and what’s no longer relevant.
+Filtering & Sorting
+
+Users can filter tasks by status, such as Pending or Completed, to focus on specific task categories.
+Tasks can be sorted by Due Date, Priority, or Creation Date, helping users manage their workload based on urgency or importance.
+Search Functionality
+
 
 # Database Schema - Entity Relationship Diagram
 
