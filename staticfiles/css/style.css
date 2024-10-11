@@ -20,6 +20,11 @@ body {
     flex-grow: 1;
 }
 
+#confirmation-message {
+    list-style-type: none;
+    background-color: #d499e7;
+}
+
 /* Nav Menu */
 #main-nav {
     background-color: #f5f5f5;
