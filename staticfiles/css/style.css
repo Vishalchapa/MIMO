@@ -188,18 +188,54 @@ body {
     color: #333;
 }
 
-
 /* Key Features section */
+#key-features-section {
+    padding: 50px 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+#key-features-section h2 {
+    font-size: 2rem;
+    margin: 20px 0;
+    color: #333;
+    text-align: center;
+}
+
 #key-features-section .features-list {
     list-style: none;
-    padding: 0;
+    padding-left: 0;
+    margin: 0 auto;
+    max-width: 700px;
+    text-align: left;
 }
 
 #key-features-section .features-list li {
     font-size: 1.1rem;
-    margin: 10px 0;
+    margin: 10px 20px;
     color: #555;
+    padding: 0 10px;
 }
+
+.features-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.features-container img {
+    width: 280%;
+    /* Adjust image size for better balance */
+    max-width: 700px;
+    border-radius: 8px;
+}
+
 
 /* Footer */
 #main-footer {
@@ -523,6 +559,31 @@ section h2 {
         margin-right: 5px;
     }
 
+    .features-container {
+        flex-direction: column;
+        /* Stack items on mobile */
+        align-items: center;
+        gap: 20px;
+        /* Reduce gap on mobile */
+    }
+
+    #key-features-section h2 {
+        font-size: 1.8rem;
+    }
+
+    #key-features-section .features-list {
+        font-size: 1rem;
+        text-align: left;
+        max-width: 100%;
+        /* Make the list take full width on mobile */
+    }
+
+    .features-container img {
+        width: 99%;
+        /* Make the image smaller on mobile */
+        margin-top: 20px;
+    }
+
     /* ------ How it Works styling for mobiles and tablets ----- */
     .how-it-works-steps {
         flex-direction: column;
@@ -681,7 +742,8 @@ section h2 {
         text-overflow: ellipsis;
     }
 
-    .tasks-table th, .tasks-table td {
+    .tasks-table th,
+    .tasks-table td {
         border: 1px solid #ddd;
         padding: 6px;
         text-align: left;
@@ -708,9 +770,10 @@ section h2 {
         font-size: 1rem;
     }
 
-    .priority-select, .status-select {
+    .priority-select,
+    .status-select {
         width: 100%;
-        max-width: 120px; 
+        max-width: 120px;
         padding: 6px;
         font-size: 0.9rem;
         border: 1px solid #ccc;
@@ -727,11 +790,13 @@ section h2 {
         font-size: 0.85rem;
     }
 
-    .btn, .btn-create, .btn-submit {
+    .btn,
+    .btn-create,
+    .btn-submit {
         width: auto;
         padding: 8px 12px;
         font-size: 0.9rem;
-        max-width: 150px; 
+        max-width: 150px;
         margin: 5px auto;
     }
 
@@ -739,7 +804,7 @@ section h2 {
         width: auto;
         padding: 8px 12px;
         font-size: 0.9rem;
-        max-width: 70px; 
+        max-width: 70px;
         margin: 5px auto;
     }
 
