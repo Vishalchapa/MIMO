@@ -46,6 +46,8 @@ The purpose of a MIMO app is to help individuals and teams organise, prioritise,
   - [Manual Testing](#manual-testing)
 - [Credits](#credits)
   - [Content](#content)
+![image](https://github.com/user-attachments/assets/424810c8-a1aa-4ad2-9087-e7ea43123e0c)
+![image](https://github.com/user-attachments/assets/8155789e-404d-49ed-997b-df41a33d627b)
 
 
 # UX - User Expirience
