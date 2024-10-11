@@ -6,7 +6,7 @@ Mimo is a user-friendly task management app designed to help individuals and tea
 
 The live link can be found here - [MIMO](https://mimo-app-bab402704619.herokuapp.com/) 
 
-![MIMO responsive screenshot]()
+![MIMO responsive screenshot](docs/wireframes/amiresponsive.png)
 
 ## Purpose of the project
 The purpose of a MIMO app is to help individuals and teams organise, prioritise, and track tasks efficiently to achieve specific goals or complete projects. The development is focusing on Django and Bootstrap frameworks, Database manipulation and CRUD functionality.
@@ -48,6 +48,7 @@ The purpose of a MIMO app is to help individuals and teams organise, prioritise,
   - [Content](#content)
 
 
+
 # UX - User Expirience
 
 ## User Stories:
@@ -78,18 +79,22 @@ The purpose of a MIMO app is to help individuals and teams organise, prioritise,
 
 ### Colour Scheme
 
-As a main colours, we used ``` ``` colour for the text and ```  ``` for block background to make content more readable.
+This was handled via Dalton
 
-Colour Blind Safe and contrast was checked by [Adobe Color](<https://color.adobe.com/create/color-accessibility>)
+![image](https://github.com/user-attachments/assets/d50a19b7-3695-43c8-b866-c6727866e70f)
 
-![Color Blind Safe]()
-*Accessibility check for colour scheme*
 
-![Contrast Checker]()
-*Contrast checker*
+![image](https://github.com/user-attachments/assets/7b697d2f-525c-46ce-a8ca-311794e9b0c7)
 
-![Colour Scheme]()
-*Colour Scheme*
+
+![image](https://github.com/user-attachments/assets/b082915b-286b-46db-a205-15e09c6d30ab)
+
+
+![image](https://github.com/user-attachments/assets/9f4e6dd6-f503-45c4-b447-fa4c8d888e90)
+
+https://chromewebstore.google.com/detail/colorblind-dalton-for-goo/afcafnelafcgjinkaeohkalmfececool?hl=en
+
+
 
 ### Font
 
@@ -125,16 +130,10 @@ __Phone View:__
 
 <details open>
     <summary>Browser view of home page</summary>  
-    <img src="">  
-    <img src="">  
-    <img src="">  
+    <img src="docs/final1.png">  
+    <img src="docs/final2.png">  
+    <img src="docs/final3.png">  
 </details>
-
-<details>
-    <summary></summary>  
-    <img src="">  
-</details>
-
 
 # Features 
 
@@ -155,10 +154,7 @@ Users can create, edit, and delete tasks easily.
 Each task can include details like due dates and priorities, helping users organize and plan their work.
 Task Status Tracking
 
-
-![image](https://github.com/user-attachments/assets/c082419b-5866-4596-9ab5-97e3777c9748)
-
-
+![image](https://github.com/user-attachments/assets/3ef90a6e-9027-4c68-9f2e-cc9558b82e07)
 
 
 
@@ -170,7 +166,9 @@ Responsive Design
 
 The app is fully responsive, ensuring that users can access and interact with it seamlessly on desktops, tablets, or mobile devices.
 
-![image](https://github.com/user-attachments/assets/f6ac031b-aded-4ffa-ad91-2f7f2a42d544)
+![image](https://github.com/user-attachments/assets/0e868bfa-b8bb-44dd-83ba-7d2168fafe90)
+
+![image](https://github.com/user-attachments/assets/7f0e4d00-99a7-46be-8645-8a2bd5b82644)
 
 
 All tasks are securely saved and persist across sessions, so users don’t lose their data when they log out or switch devices.
@@ -220,7 +218,7 @@ We chose to follow the MoSCoW Prioritization method for Freefido, identifying an
 
  - __Won't Haves:__ the features or components that either no longer fit the project's brief or are of very low priority for this release.
 
-![Project Board](img.png)
+![Project Board](docs/project.png)
 
 
 # Deployment
@@ -373,7 +371,7 @@ I have had to follow a different approach for validating my HTML for this projec
 - Paste the copied code into the [validate by input](https://validator.w3.org/#validate_by_input) option.
 - Check for errors and warnings, fix any issues, revalidate by following the above steps and record the results.
 
-![Html validation](img.png)
+![Html validation](docs/html.png)
 
 All HTML pages were validated and received a 'No errors or warning to show' result as shown above.
 
@@ -383,9 +381,7 @@ All HTML pages were validated and received a 'No errors or warning to show' resu
 
 [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) was used to validate my CSS file. External CSS for Bootstrap, provided by [CDN](https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css) was not tested. Warnings were present because of using vendor extentions for different browsers
 
-![CSS Validation](img.png)
-
-![CSS warnings](img.png)
+![CSS Validation](docs/image11.png)
  
 <hr>
 
@@ -393,7 +389,7 @@ All HTML pages were validated and received a 'No errors or warning to show' resu
 
 [JSHint](https://jshint.com/) was used to validate the small amount of JavaScript code added to the project. External JS, for Bootstrap purposes, obtained via [CDN](https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js) was not validated through JSHint
 
-![JS Validator](image.png)
+![JS Validator](docs/jshint.png)
 
 <hr>
 
@@ -403,7 +399,7 @@ All HTML pages were validated and received a 'No errors or warning to show' resu
 
 | Feature | admin.py | forms.py | models.py | urls.py | views.py |
 |---------|----------|----------|-----------|---------|----------|
-| App  | [no errors](image.png) | [no errors](image.png) | [no errors](image.png) | [no errors](image.png) | [no errors](image.png) |
+| Tasks  | no errors | no errors| [no errors](docs/pylinter.png) | no errors | no errors |
 
 <hr>
 
@@ -411,25 +407,15 @@ All HTML pages were validated and received a 'No errors or warning to show' resu
 
 Lighthouse testing was carried out in Incognito mode to acheive the best result. Performance was lower than preferred due to the site used Cloudinary storage. Images used in the sites design were saved in webp and png format, and compressed using [tinypng](https://tinypng.com/) and [To WebP](https://towebp.io/) to offer the best chance for a decent performance score.
 
-![Lighthouse desktop]()
-
-![Lighthouse mobile]()
+![Lighthouse desktop](docs/image5.png)
 
 ### Wave Accessibility Evaluation
 
-![WAVE Web Accessibility Evaluation Tools]()
-  
-## Manual Testing
-
-All features were tested on different devices(mobile, laptop, tablet)
-| Feature | Tested? | Screenshots | User Feedback Provided | Pass/Fail |
-|---------|---------|-------------|------------------------| ----------|
-| Feature | Yes/No | [Name for image](path for image.png) | Feedback | Pass/Fail |
+![WAVE Web Accessibility Evaluation Tools](docs/image6.png)
 
 <hr>
 
 # Credits 
-
 
 ## Content 
 
@@ -439,3 +425,4 @@ All features were tested on different devices(mobile, laptop, tablet)
 - [Balsamiq](https://balsamiq.com/) used for wireframe
 - [Perplexity](https://www.perplexity.ai/)
 - [Miro](https://miro.com) used for planning the work process
+- [Flaticon](https://www.flaticon.com/search?word=task+management+task+management) - Logo for the app was taken from this resource
