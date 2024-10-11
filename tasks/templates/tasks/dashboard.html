@@ -5,7 +5,7 @@
     <!-- Search Form -->
     <form method="GET" action="{% url 'dashboard' %}" id="search-form">
         <input type="text" name="q" placeholder="Search tasks..." value="{{ query }}">
-        <button type="submit">Search</button>
+        <button type="submit" class="btn btn-search">Search</button>
     </form>
     <!-- Display Search Results if a search was made -->
     {% if query %}

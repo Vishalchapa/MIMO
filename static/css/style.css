@@ -246,10 +246,12 @@ body {
 .btn-search {
     background-color: #4CAF50;
     color: #fff;
+    padding: 3px 10px;
+    margin-left: 5px;
 }
 
 .btn-create, .btn-submit {
-    background-color: #007bff;
+    background-color: #800ea2;
     color: #fff;
     margin-top: 10px;
 }
