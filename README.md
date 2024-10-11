@@ -184,7 +184,9 @@ Responsive Design
 
 The app is fully responsive, ensuring that users can access and interact with it seamlessly on desktops, tablets, or mobile devices.
 
-![image](https://github.com/user-attachments/assets/f6ac031b-aded-4ffa-ad91-2f7f2a42d544)
+![image](https://github.com/user-attachments/assets/0e868bfa-b8bb-44dd-83ba-7d2168fafe90)
+
+![image](https://github.com/user-attachments/assets/7f0e4d00-99a7-46be-8645-8a2bd5b82644)
 
 
 All tasks are securely saved and persist across sessions, so users don’t lose their data when they log out or switch devices.
