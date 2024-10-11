@@ -155,8 +155,7 @@ Users can create, edit, and delete tasks easily.
 Each task can include details like due dates and priorities, helping users organize and plan their work.
 Task Status Tracking
 
-
-![image](https://github.com/user-attachments/assets/c082419b-5866-4596-9ab5-97e3777c9748)
+![image](https://github.com/user-attachments/assets/3ef90a6e-9027-4c68-9f2e-cc9558b82e07)
 
 
 
