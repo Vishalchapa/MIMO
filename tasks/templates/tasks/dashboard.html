@@ -99,9 +99,9 @@
                     </select>
                 </form></td>
             <td class="task-actions">
-                    <a href="{% url 'task-edit' task.id %}"><i class="fa-solid fa-pen-to-square"></i></a> |
-                    <a href="{% url 'task-delete' task.id %}"><i class="fa-solid fa-trash-can"></i></a> |
-                    <a href="{% url 'task-complete' task.id %}"><i class="fa-solid fa-square-check"></i></a>
+                    <a href="{% url 'task-edit' task.id %}"><i class="fa-solid fa-pen-to-square" title="Edit Task"></i>></i></a> |
+                    <a href="{% url 'task-delete' task.id %}"><i class="fa-solid fa-trash-can" title="Delete Task"></i>></i></a> |
+                    <a href="{% url 'task-complete' task.id %}"><i class="fa-solid fa-square-check" title="Mark as Complete"></i>></i></a>
                 </td>
             </tr>
             {% empty %}
@@ -133,7 +133,7 @@
                 <td>{{ task.get_priority_display }}</td>
                 <td>{{ task.get_status_display }}</td>
                 <td>
-                    <a href="{% url 'task-delete' task.id %}" class="delete-btn"><i class="fa-solid fa-trash-can"></i></a>
+                    <a href="{% url 'task-delete' task.id %}" class="delete-btn" title="Delete Task"><i class="fa-solid fa-trash-can"></i></a>
                 </td>
             </tr>
             {% empty %}
