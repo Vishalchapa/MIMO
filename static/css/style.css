@@ -155,11 +155,13 @@ body {
     align-items: center;
     text-align: center;
     gap: 20px;
-    flex-wrap: wrap; /* Ensures it wraps for smaller screens */
+    flex-wrap: wrap;
+    /* Ensures it wraps for smaller screens */
 }
 
 .step {
-    flex-basis: 30%; /* Each step takes about 30% of the container */
+    flex-basis: 30%;
+    /* Each step takes about 30% of the container */
     max-width: 250px;
 }
 
@@ -220,7 +222,8 @@ body {
 }
 
 /* Section Titles */
-.dashboard-title, .section-title {
+.dashboard-title,
+.section-title {
     font-size: 2rem;
     margin-bottom: 10px;
     margin-top: 30px;
@@ -230,7 +233,8 @@ body {
 }
 
 /* Forms */
-#search-form, #createTaskForm {
+#search-form,
+#createTaskForm {
     margin-bottom: 20px;
 }
 
@@ -257,7 +261,8 @@ body {
     margin-left: 5px;
 }
 
-.btn-create, .btn-submit {
+.btn-create,
+.btn-submit {
     background-color: #800ea2;
     color: #fff;
     margin-top: 10px;
@@ -279,7 +284,8 @@ body {
     margin-bottom: 20px;
 }
 
-.tasks-table th, .tasks-table td {
+.tasks-table th,
+.tasks-table td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
@@ -314,7 +320,9 @@ body {
     color: #0056b3;
 }
 
-.fa-pen-to-square, .fa-trash-can, .fa-square-check {
+.fa-pen-to-square,
+.fa-trash-can,
+.fa-square-check {
     font-size: 1.2rem;
 }
 
@@ -331,7 +339,8 @@ body {
     display: none;
 }
 
-.priority-select, .status-select {
+.priority-select,
+.status-select {
     padding: 5px;
     font-size: 1rem;
     border: 1px solid #ccc;
@@ -489,6 +498,7 @@ section h2 {
         flex-direction: column;
         align-items: center;
     }
+
     .step {
         flex-basis: 100%;
         max-width: none;
@@ -501,14 +511,14 @@ section h2 {
         gap: 10px;
         margin: 10px 10px;
     }
-    
+
     #description-section img {
         width: auto;
         height: 40vh;
     }
 
 
-/* ------ Dashboard styling for mobiles and tablets ----- */
+    /* ------ Dashboard styling for mobiles and tablets ----- */
 
 
     #dashboard-container {
@@ -520,18 +530,21 @@ section h2 {
         flex-direction: column;
     }
 
-    #search-form input, 
+    #search-form input,
     #search-form button {
         width: 100%;
         margin-bottom: 10px;
     }
 
-    #search-results-table, #active-tasks-table, #completed-tasks-table {
+    #search-results-table,
+    #active-tasks-table,
+    #completed-tasks-table {
         width: 100%;
         overflow-x: auto;
     }
 
-    .tasks-table th, .tasks-table td {
+    .tasks-table th,
+    .tasks-table td {
         padding: 5px;
         font-size: 0.9rem;
     }
@@ -551,7 +564,43 @@ section h2 {
         font-size: 1rem;
     }
 
-/* ------ How to Use page stying for mobiles and tablets ----- */
+    /* ------ About page stying for mobiles and tablets ----- */
+    #about-container {
+        padding: 20px;
+    }
+
+    #about-title {
+        font-size: 1.8rem;
+    }
+
+    #about-overview p,
+#about-mission p,
+#about-vision p,
+#about-team p,
+#about-cta p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+    section h2 {
+        font-size: 1.3rem;
+    }
+
+    #about-features ul li {
+        padding-left: 15px;
+    }
+
+    #about-cta {
+        padding: 15px;
+    }
+
+    #about-cta .btn {
+        padding: 8px 16px;
+        font-size: 1rem;
+    }
+
+
+    /* ------ How to Use page stying for mobiles and tablets ----- */
     #how-to-use-container {
         padding: 10px;
     }
