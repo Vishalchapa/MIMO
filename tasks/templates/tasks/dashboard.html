@@ -5,8 +5,8 @@
     <h1 class="dashboard-title">Your Task Dashboard</h1>
     <!-- Search Form -->
     <form method="GET" action="{% url 'dashboard' %}" id="search-form">
-        <input type="text" name="q" placeholder="Search tasks..." value="{{ query }}">
-        <button type="submit">Search</button>
+        <input type="text" name="q" placeholder=" Search tasks..." value="{{ query }}">
+        <button type="submit" class="btn btn-search">Search</button>
     </form>
     <!-- Display Search Results if a search was made -->
     {% if query %}
@@ -24,7 +24,7 @@
         <tbody>
             {% for task in search_results %}
             <tr class="priority-{% if task.priority == 'High' %}high{% elif task.priority == 'Normal' %}normal{% elif task.priority == 'Low' %}low{% endif %}">
-                <td>{{ task.title }}</td>
+                <td class="title-column">{{ task.title }}</td>
                 <td>{{ task.due_day }}</td>
                 <td><form action="{% url 'change-priority' task.id %}" method="post" class="priority-form">
                     {% csrf_token %}
@@ -115,9 +115,9 @@
                     </select>
                 </form></td>
             <td class="task-actions">
-                    <a href="{% url 'task-edit' task.id %}" class="btn-edit"><i class="fa-solid fa-pen-to-square"></i></a> |
-                    <a href="{% url 'task-delete' task.id %}"><i class="fa-solid fa-trash-can"></i></a> |
-                    <a href="{% url 'task-complete' task.id %}"><i class="fa-solid fa-square-check"></i></a>
+                    <a href="{% url 'task-edit' task.id %}"><i class="fa-solid fa-pen-to-square btn-edit" title="Edit Task"></i></a> 
+                    <a href="{% url 'task-delete' task.id %}"><i class="fa-solid fa-trash-can" title="Delete Task"></i></a> 
+                    <a href="{% url 'task-complete' task.id %}"><i class="fa-solid fa-square-check" title="Mark as Complete"></i></a>
                 </td>
             </tr>
             {% empty %}
@@ -149,7 +149,7 @@
                 <td>{{ task.get_priority_display }}</td>
                 <td>{{ task.get_status_display }}</td>
                 <td>
-                    <a href="{% url 'task-delete' task.id %}" class="delete-btn"><i class="fa-solid fa-trash-can"></i></a>
+                    <a href="{% url 'task-delete' task.id %}" class="delete-btn" title="Delete Task"><i class="fa-solid fa-trash-can"></i></a>
                 </td>
             </tr>
             {% empty %}

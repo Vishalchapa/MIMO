@@ -11,12 +11,24 @@
 body {
     background-color: #f7f2f2;
     font-family: 'Catamaran', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#content-wrapper {
+    flex-grow: 1;
+}
+
+#confirmation-message {
+    list-style-type: none;
+    background-color: #d499e7;
 }
 
 /* Nav Menu */
 #main-nav {
     background-color: #f5f5f5;
-    padding: 10px 20px;
+    padding: 20px 70px;
 }
 
 #main-nav .nav-container {
@@ -55,8 +67,16 @@ body {
 
 #main-nav #nav-links a {
     text-decoration: none;
-    color: black;
+    color: #555;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+/* Style for the active navigation link */
+#main-nav ul a.active {
     font-weight: bold;
+    border-bottom: 2px solid #800ea2;
+    text-decoration: underline;
 }
 
 /* Hero section */
@@ -75,6 +95,7 @@ body {
 #hero-section p {
     font-size: 1.25rem;
     margin-bottom: 30px;
+    color: #555;
 }
 
 .cta-buttons a {
@@ -117,12 +138,17 @@ body {
 
 #description-section h2 {
     font-weight: 600;
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
 
 #description-section h1,
 #description-section h2 {
     margin: 30px;
+}
+
+#description-section p {
+    color: #555;
+    font-size: 1.2rem;
 }
 
 #description-section img {
@@ -148,16 +174,18 @@ body {
     align-items: center;
     text-align: center;
     gap: 20px;
-    flex-wrap: wrap; /* Ensures it wraps for smaller screens */
+    flex-wrap: wrap;
+    /* Ensures it wraps for smaller screens */
 }
 
 .step {
-    flex-basis: 30%; /* Each step takes about 30% of the container */
+    flex-basis: 30%;
+    /* Each step takes about 30% of the container */
     max-width: 250px;
 }
 
 .step i {
-    color: #007bff;
+    color: #800ea2;
     margin-bottom: 15px;
 }
 
@@ -168,17 +196,54 @@ body {
     color: #333;
 }
 
-
 /* Key Features section */
+#key-features-section {
+    padding: 50px 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+#key-features-section h2 {
+    font-size: 2rem;
+    margin: 20px 0;
+    color: #333;
+    text-align: center;
+}
+
 #key-features-section .features-list {
     list-style: none;
-    padding: 0;
+    padding-left: 0;
+    margin: 0 auto;
+    max-width: 700px;
+    text-align: left;
 }
 
 #key-features-section .features-list li {
     font-size: 1.1rem;
-    margin: 10px 0;
+    margin: 10px 20px;
+    color: #555;
+    padding: 0 10px;
 }
+
+.features-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.features-container img {
+    width: 280%;
+    /* Adjust image size for better balance */
+    max-width: 700px;
+    border-radius: 8px;
+}
+
 
 /* Footer */
 #main-footer {
@@ -205,9 +270,6 @@ body {
 
 /* ----------------------------------------- Dashboard styling ------------------------------------- */
 
-
-
-
 /* General Container */
 #dashboard-container {
     max-width: 1200px;
@@ -216,14 +278,19 @@ body {
 }
 
 /* Section Titles */
-.dashboard-title, .section-title {
+.dashboard-title,
+.section-title {
     font-size: 2rem;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    margin-top: 30px;
     color: #333;
+    text-align: center;
+    font-weight: 600;
 }
 
 /* Forms */
-#search-form, #createTaskForm {
+#search-form,
+#createTaskForm {
     margin-bottom: 20px;
 }
 
@@ -246,12 +313,24 @@ body {
 .btn-search {
     background-color: #4CAF50;
     color: #fff;
+    padding: 3px 10px;
+    margin-left: 5px;
 }
 
-.btn-create, .btn-submit {
-    background-color: #007bff;
+.btn-create,
+.btn-submit {
+    background-color: #800ea2;
     color: #fff;
     margin-top: 10px;
+    padding: 3px 10px;
+}
+
+#createTaskForm {
+    margin-top: 20px;
+}
+
+.form-title {
+    font-size: 1.7rem;
 }
 
 /* Task Tables */
@@ -261,7 +340,8 @@ body {
     margin-bottom: 20px;
 }
 
-.tasks-table th, .tasks-table td {
+.tasks-table th,
+.tasks-table td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
@@ -271,15 +351,6 @@ body {
     background-color: #f2f2f2;
     color: #333;
 }
-
-.tasks-table tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-.tasks-table tr:hover {
-    background-color: #f1f1f1;
-}
-
 
 /* Priority-based coloring */
 .priority-high {
@@ -305,18 +376,27 @@ body {
     color: #0056b3;
 }
 
-.fa-pen-to-square, .fa-trash-can, .fa-square-check {
+.fa-pen-to-square,
+.fa-trash-can,
+.fa-square-check {
     font-size: 1.2rem;
 }
 
+.fa-trash-can {
+    color: rgb(136, 33, 33);
+}
 
+.fa-square-check {
+    color: green;
+}
 
 /* Hide the Create Task form initially */
 #createTaskForm {
     display: none;
 }
 
-.priority-select, .status-select {
+.priority-select,
+.status-select {
     padding: 5px;
     font-size: 1rem;
     border: 1px solid #ccc;
@@ -331,16 +411,193 @@ body {
     margin-right: 5px;
 }
 
+/* ----------------------------------------- About Page Styling ------------------------------------- */
+/* General About Page Styling */
+#about-container {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#about-title {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #000;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+/* Section Titles */
+section h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Paragraph Styling */
+#about-overview p,
+#about-mission p,
+#about-vision p,
+#about-team p,
+#about-cta p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Features List */
+#about-features ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#about-features ul li {
+    margin-bottom: 15px;
+    padding-left: 20px;
+    position: relative;
+}
+
+#about-features ul li::before {
+    content: "✔";
+    color: #800ea2;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.2rem;
+}
+
+/* Call to Action Section */
+#about-cta {
+    text-align: center;
+    background-color: #800ea2;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#about-cta h2 {
+    color: white;
+}
+
+#about-cta p {
+    color: white;
+    margin-bottom: 20px;
+}
+
+#about-cta .btn {
+    background-color: white;
+    color: #800ea2;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+#about-cta .btn:hover {
+    background-color: #f2f2f2;
+    color: #280d31;
+}
+
+
+/* ----------------------------------------- How to Use Page Styling ------------------------------------- */
+#how-to-use-container {
+    max-width: 800px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#how-to-use-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+#how-to-use-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.how-to-use-item {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    color: #555;
+    padding: 10px;
+    border-left: 4px solid #800ea2;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.how-to-use-item strong {
+    color: #800ea2;
+}
+
 
 
 /* Media query for mobile sized screens */
 @media (max-width: 768px) {
+
+    /* ------ Header styling for mobiles and tablets ----- */
+    .logo-text {
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
+    #main-nav .logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    #main-nav #nav-links li {
+        display: inline;
+        margin-right: 5px;
+    }
+
+    .features-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    #key-features-section h2 {
+        font-size: 1.8rem;
+    }
+
+    #key-features-section .features-list {
+        font-size: 1rem;
+        text-align: left;
+        max-width: 100%;
+        /* Make the list take full width on mobile */
+    }
+
+    .features-container img {
+        width: 99%;
+        /* Make the image smaller on mobile */
+        margin-top: 15px;
+    }
+
+    /* ------ How it Works styling for mobiles and tablets ----- */
     .how-it-works-steps {
         flex-direction: column;
         align-items: center;
     }
+
     .step {
-        flex-basis: 100%; /* Each step takes full width on mobile */
+        flex-basis: 100%;
         max-width: none;
         margin-bottom: 30px;
     }
@@ -351,14 +608,14 @@ body {
         gap: 10px;
         margin: 10px 10px;
     }
-    
+
     #description-section img {
         width: auto;
         height: 40vh;
     }
 
 
-/* ------ Dashboard styling for mobiles and tablets ----- */
+    /* ------ Dashboard styling for mobiles and tablets ----- */
 
 
     #dashboard-container {
@@ -370,18 +627,21 @@ body {
         flex-direction: column;
     }
 
-    #search-form input, 
+    #search-form input,
     #search-form button {
         width: 100%;
         margin-bottom: 10px;
     }
 
-    #search-results-table, #active-tasks-table, #completed-tasks-table {
+    #search-results-table,
+    #active-tasks-table,
+    #completed-tasks-table {
         width: 100%;
         overflow-x: auto;
     }
 
-    .tasks-table th, .tasks-table td {
+    .tasks-table th,
+    .tasks-table td {
         padding: 5px;
         font-size: 0.9rem;
     }
@@ -400,4 +660,175 @@ body {
         margin-bottom: 10px;
         font-size: 1rem;
     }
+
+    /* ------ About page stying for mobiles and tablets ----- */
+    #about-container {
+        padding: 20px;
+    }
+
+    #about-title {
+        font-size: 1.8rem;
+    }
+
+    #about-overview p,
+    #about-mission p,
+    #about-vision p,
+    #about-team p,
+    #about-cta p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    section h2 {
+        font-size: 1.3rem;
+    }
+
+    #about-features ul li {
+        padding-left: 15px;
+    }
+
+    #about-cta {
+        padding: 15px;
+    }
+
+    #about-cta .btn {
+        padding: 8px 16px;
+        font-size: 1rem;
+    }
+
+
+    /* ------ How to Use page stying for mobiles and tablets ----- */
+    #how-to-use-container {
+        padding: 10px;
+    }
+
+    #how-to-use-title {
+        font-size: 2rem;
+    }
+
+    .how-to-use-item {
+        font-size: 1.1rem;
+        padding: 8px;
+    }
+}
+
+
+/* ------------------------------Mobile Phones Adjustments ------------------------*/
+@media (max-width: 576px) {
+    #main-nav {
+        padding: 10px 10px;
+    }
+
+    #hero-section {
+        padding: 70px 15px;
+    }
+
+    #description-section {
+        padding: 0 10px;
+    }
+
+    #key-features-section {
+        padding: 20px 0px;
+    }
+
+
+    /* Containers */
+    #dashboard-container {
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 10px;
+    }
+
+    /* Task Tables */
+    .tasks-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+        font-size: 0.9rem;
+        table-layout: fixed;
+        /* Ensures the table respects column widths */
+    }
+
+    /* Section Titles */
+    .dashboard-title,
+    .section-title {
+        font-size: 1.3rem;
+    }
+
+    /* Truncate long titles */
+    .tasks-table td.title-column {
+        max-width: 120px;
+        /* Limit title width */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .tasks-table th,
+    .tasks-table td {
+        border: 1px solid #ddd;
+        padding: 6px;
+        text-align: left;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* Task Table */
+    .tasks-table th,
+    .tasks-table td {
+        padding: 5px;
+        font-size: 0.85rem;
+    }
+
+    /* Action buttons */
+    .task-actions a {
+        font-size: 0.9rem;
+    }
+
+    .fa-pen-to-square,
+    .fa-trash-can,
+    .fa-square-check {
+        font-size: 1rem;
+    }
+
+    .priority-select,
+    .status-select {
+        width: 100%;
+        max-width: 120px;
+        padding: 6px;
+        font-size: 0.9rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #fff;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        font-size: 0.7rem;
+    }
+
+    .tasks-table td {
+        padding: 5px;
+        font-size: 0.85rem;
+    }
+
+    .btn,
+    .btn-create,
+    .btn-submit {
+        width: auto;
+        padding: 8px 12px;
+        font-size: 0.9rem;
+        max-width: 150px;
+        margin: 5px auto;
+    }
+
+    .btn-search {
+        width: auto;
+        padding: 8px 12px;
+        font-size: 0.9rem;
+        max-width: 70px;
+        margin: 5px auto;
+    }
+
+
 }

@@ -5,10 +5,10 @@ from .models import Task
 class TaskForm(forms.ModelForm):
     class Meta:
         model = Task
-        exclude = ['created_on']
-        fields = ['title', 'body', 'priority', 'due_day', 'status']
+        fields = ['title', 'priority', 'due_day', 'status']
         widgets = {
-            'due_day': forms.DateInput(attrs={'type': 'date', 'id': 'id_due_day'}),
+            'title': forms.TextInput(attrs={'size': '40', 'placeholder': 'Enter task title'}),
+            'due_day': forms.DateInput(attrs={'type': 'date'}),
             'status': forms.Select(),  # For dropdown choices
             'priority': forms.Select(),  # For dropdown priority
         }
