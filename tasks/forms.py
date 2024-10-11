@@ -12,13 +12,3 @@ class TaskForm(forms.ModelForm):
             'status': forms.Select(),  # For dropdown choices
             'priority': forms.Select(),  # For dropdown priority
         }
-
-    def clean_due_day(self):
-        """
-        Checks if the due_day is valid (not in the past)
-        """
-        due_day = self.cleaned_data.get('due_day')
-        today = date.today()
-        if due_day < today:
-            raise forms.ValidationError('You cannot choose a date in the past.')
-        return due_day
