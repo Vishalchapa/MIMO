@@ -346,6 +346,103 @@ body {
     margin-right: 5px;
 }
 
+/* ----------------------------------------- About Page Styling ------------------------------------- */
+/* General About Page Styling */
+#about-container {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#about-title {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #000;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+/* Section Titles */
+section h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Paragraph Styling */
+#about-overview p,
+#about-mission p,
+#about-vision p,
+#about-team p,
+#about-cta p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Features List */
+#about-features ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#about-features ul li {
+    margin-bottom: 15px;
+    padding-left: 20px;
+    position: relative;
+}
+
+#about-features ul li::before {
+    content: "✔";
+    color: #800ea2;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.2rem;
+}
+
+/* Call to Action Section */
+#about-cta {
+    text-align: center;
+    background-color: #800ea2;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#about-cta h2 {
+    color: white;
+}
+
+#about-cta p {
+    color: white;
+    margin-bottom: 20px;
+}
+
+#about-cta .btn {
+    background-color: white;
+    color: #800ea2;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+#about-cta .btn:hover {
+    background-color: #f2f2f2;
+    color: #280d31;
+}
+
+
 /* ----------------------------------------- How to Use Page Styling ------------------------------------- */
 #how-to-use-container {
     max-width: 800px;
@@ -386,9 +483,6 @@ body {
 
 
 
-
-
-
 /* Media query for mobile sized screens */
 @media (max-width: 768px) {
     .how-it-works-steps {
@@ -396,7 +490,7 @@ body {
         align-items: center;
     }
     .step {
-        flex-basis: 100%; /* Each step takes full width on mobile */
+        flex-basis: 100%;
         max-width: none;
         margin-bottom: 30px;
     }
