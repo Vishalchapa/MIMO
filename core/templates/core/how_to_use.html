@@ -1,16 +1,21 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container">
-    <h1>How to Use PlanApp</h1>
-    <ul>
-        <li><strong>Create a Task:</strong> Click on "Create New Task" to add a task. Fill in the title, set the
+<div id="how-to-use-container" class="container">
+    <h1 id="how-to-use-title">How to Use PlanApp</h1>
+    <ul id="how-to-use-list">
+        <li class="how-to-use-item"><strong>Create a Task:</strong> Click on "Create New Task" to add a task. Fill in
+            the title, set the
             priority, and choose a due date.</li>
-        <li><strong>Edit a Task:</strong> Click the "Edit" button next to any task to update its details.</li>
-        <li><strong>Mark a Task as Complete:</strong> Once a task is done, click "Mark as Complete" to move it to the
+        <li class="how-to-use-item"><strong>Edit a Task:</strong> Click the "Edit" button next to any task to update its
+            details.</li>
+        <li class="how-to-use-item"><strong>Mark a Task as Complete:</strong> Once a task is done, click "Mark as
+            Complete" to move it to the
             completed section.</li>
-        <li><strong>Delete a Task:</strong> Click "Delete" to remove a task from your list permanently.</li>
-        <li><strong>Search Tasks:</strong> Use the search bar to quickly find tasks by title.</li>
+        <li class="how-to-use-item"><strong>Delete a Task:</strong> Click "Delete" to remove a task from your list
+            permanently.</li>
+        <li class="how-to-use-item"><strong>Search Tasks:</strong> Use the search bar to quickly find tasks by title.
+        </li>
     </ul>
 </div>
 {% endblock %}
