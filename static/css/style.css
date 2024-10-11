@@ -272,15 +272,6 @@ body {
     color: #333;
 }
 
-.tasks-table tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-.tasks-table tr:hover {
-    background-color: #f1f1f1;
-}
-
-
 /* Priority-based coloring */
 .priority-high {
     background-color: #ffdddd;
@@ -307,6 +298,14 @@ body {
 
 .fa-pen-to-square, .fa-trash-can, .fa-square-check {
     font-size: 1.2rem;
+}
+
+.fa-trash-can {
+    color: rgb(136, 33, 33);
+}
+
+.fa-square-check {
+    color: green;
 }
 
 
