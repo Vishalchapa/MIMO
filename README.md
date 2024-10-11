@@ -6,7 +6,7 @@ Mimo is a user-friendly task management app designed to help individuals and tea
 
 The live link can be found here - [MIMO](https://mimo-app-bab402704619.herokuapp.com/) 
 
-![MIMO responsive screenshot](docs/wireframes/amiresponsive.png)
+![MIMO responsive screenshot](docs/amiresponsive.png)
 
 ## Purpose of the project
 The purpose of a MIMO app is to help individuals and teams organise, prioritise, and track tasks efficiently to achieve specific goals or complete projects. The development is focusing on Django and Bootstrap frameworks, Database manipulation and CRUD functionality.
