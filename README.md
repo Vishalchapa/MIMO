@@ -85,6 +85,21 @@ Colour Blind Safe and contrast was checked by [Adobe Color](<https://color.adobe
 ![Color Blind Safe]()
 *Accessibility check for colour scheme*
 
+This was handled via Dalton
+
+![image](https://github.com/user-attachments/assets/d50a19b7-3695-43c8-b866-c6727866e70f)
+
+
+![image](https://github.com/user-attachments/assets/7b697d2f-525c-46ce-a8ca-311794e9b0c7)
+
+
+![image](https://github.com/user-attachments/assets/b082915b-286b-46db-a205-15e09c6d30ab)
+
+
+![image](https://github.com/user-attachments/assets/9f4e6dd6-f503-45c4-b447-fa4c8d888e90)
+
+https://chromewebstore.google.com/detail/colorblind-dalton-for-goo/afcafnelafcgjinkaeohkalmfececool?hl=en
+
 ![Contrast Checker]()
 *Contrast checker*
 
