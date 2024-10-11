@@ -832,3 +832,27 @@ section h2 {
 
 
 }
+
+
+
+/* Style for sorting arrows */
+.sortable {
+    cursor: pointer;
+}
+
+.sortable::after {
+    content: '▲';
+    display: inline-block;
+    margin-left: 5px;
+    visibility: hidden;
+}
+
+.sortable.asc::after {
+    content: '▲';
+    visibility: visible;
+}
+
+.sortable.desc::after {
+    content: '▼';
+    visibility: visible;
+}
