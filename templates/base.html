@@ -53,28 +53,31 @@
 
                 <ul id="nav-links">
                     {% if user.is_authenticated %}
-                    <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
-                    <li><a href="{% url 'how_to_use' %}">How to Use</a></li>
+                    <li><a href="{% url 'dashboard' %}" class="{% if request.resolver_match.url_name == 'dashboard' %}active{% endif %}">Dashboard</a></li>
+                    <li><a href="{% url 'how_to_use' %}" class="{% if request.resolver_match.url_name == 'how_to_use' %}active{% endif %}">How to Use</a></li>
                     <br>
-                    <li><a href="{% url 'account_change_password' %}">Change password</a></li>
+                    <li><a href="{% url 'account_change_password' %}"
+                            class="{% if request.resolver_match.url_name == 'account_change_password' %}active{% endif %}">Change
+                            password</a></li>
 
                     <li>
-                        <a class="{% if request.path == logout_url %}current{% endif %}" aria-current="page"
-                            href="{% url 'account_logout' %}" aria-label="Menu Logout link (Logs you out)">Logout</a>
+                        <a class="{% if request.path == logout_url %}current{% endif %} {% if request.resolver_match.url_name == 'account_logout' %}active{% endif %}"
+                            aria-current="page" href="{% url 'account_logout' %}"
+                            aria-label="Menu Logout link (Logs you out)">Logout</a>
                     </li>
                     {% else %}
                     <li>
-                        <a class="{% if request.path == main_url %}current{% endif %}" aria-current="page"
-                            href="{% url 'index' %}" aria-label="Opens the home page">Home</a>
+                        <a class="{% if request.path == main_url %}current{% endif %} {% if request.resolver_match.url_name == 'index' %}active{% endif %}"
+                            aria-current="page" href="{% url 'index' %}" aria-label="Opens the home page">Home</a>
                     </li>
-                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'about' %}" class="{% if request.resolver_match.url_name == 'about' %}active{% endif %}">About</a></li>
                     <li>
-                        <a class="{% if request.path == signup_url %}current{% endif %}" aria-current="page"
+                        <a class="{% if request.path == signup_url %}current{% endif %} {% if request.resolver_match.url_name == 'account_signup' %}active{% endif %}" aria-current="page"
                             href="{% url 'account_signup' %}"
                             aria-label="Menu Register link (Opens the Register page)">Register</a>
                     </li>
                     <li>
-                        <a class="{% if request.path == login_url %}current{% endif %}" aria-current="page"
+                        <a class="{% if request.path == login_url %}current{% endif %} {% if request.resolver_match.url_name == 'account_login' %}active{% endif %}" aria-current="page"
                             href="{% url 'account_login' %}"
                             aria-label="Menu Login link (Opens the Login page)">Login</a>
                     </li>
@@ -126,7 +129,7 @@
     <script src="https://kit.fontawesome.com/f40ce1e09e.js" crossorigin="anonymous"></script>
     {% block extra_js %}{% endblock %}
 
-    <script src="{% static 'js/script.js' %}"></script>    
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
 
 </html>

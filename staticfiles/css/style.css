@@ -28,7 +28,7 @@ body {
 /* Nav Menu */
 #main-nav {
     background-color: #f5f5f5;
-    padding: 10px 20px;
+    padding: 20px 70px;
 }
 
 #main-nav .nav-container {
@@ -67,8 +67,16 @@ body {
 
 #main-nav #nav-links a {
     text-decoration: none;
-    color: black;
-    font-weight: 400;
+    color: #555;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+/* Style for the active navigation link */
+#main-nav ul a.active {
+    font-weight: bold;
+    border-bottom: 2px solid #800ea2;
+    text-decoration: underline;
 }
 
 /* Hero section */

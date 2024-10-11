@@ -72,6 +72,13 @@ body {
     font-size: 1.2rem;
 }
 
+/* Style for the active navigation link */
+#main-nav ul a.active {
+    font-weight: bold;
+    border-bottom: 2px solid #800ea2;
+    text-decoration: underline;
+}
+
 /* Hero section */
 #hero-section {
     background-color: #f7f9fb;
