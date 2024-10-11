@@ -212,9 +212,6 @@ body {
 
 /* ----------------------------------------- Dashboard styling ------------------------------------- */
 
-
-
-
 /* General Container */
 #dashboard-container {
     max-width: 1200px;
@@ -329,8 +326,6 @@ body {
     color: green;
 }
 
-
-
 /* Hide the Create Task form initially */
 #createTaskForm {
     display: none;
@@ -349,6 +344,44 @@ body {
 
 .task-actions a i {
     margin-right: 5px;
+}
+
+/* ----------------------------------------- How to Use Page Styling ------------------------------------- */
+#how-to-use-container {
+    max-width: 800px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#how-to-use-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+#how-to-use-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.how-to-use-item {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    color: #555;
+    padding: 10px;
+    border-left: 4px solid #800ea2;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.how-to-use-item strong {
+    color: #800ea2;
 }
 
 
