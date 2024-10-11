@@ -63,7 +63,7 @@ body {
 #main-nav #nav-links a {
     text-decoration: none;
     color: black;
-    font-weight: bold;
+    font-weight: 400;
 }
 
 /* Hero section */
