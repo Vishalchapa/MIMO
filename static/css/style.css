@@ -561,10 +561,8 @@ section h2 {
 
     .features-container {
         flex-direction: column;
-        /* Stack items on mobile */
         align-items: center;
         gap: 20px;
-        /* Reduce gap on mobile */
     }
 
     #key-features-section h2 {
@@ -581,7 +579,7 @@ section h2 {
     .features-container img {
         width: 99%;
         /* Make the image smaller on mobile */
-        margin-top: 20px;
+        margin-top: 15px;
     }
 
     /* ------ How it Works styling for mobiles and tablets ----- */
@@ -709,6 +707,22 @@ section h2 {
 
 /* ------------------------------Mobile Phones Adjustments ------------------------*/
 @media (max-width: 576px) {
+    #main-nav {
+        padding: 10px 10px;
+    }
+
+    #hero-section {
+        padding: 70px 15px;
+    }
+
+    #description-section {
+        padding: 0 10px;
+    }
+
+    #key-features-section {
+        padding: 20px 0px;
+    }
+
 
     /* Containers */
     #dashboard-container {
