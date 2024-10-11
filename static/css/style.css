@@ -502,12 +502,12 @@ section h2 {
 /* Media query for mobile sized screens */
 @media (max-width: 768px) {
 
-     /* ------ Header styling for mobiles and tablets ----- */
+    /* ------ Header styling for mobiles and tablets ----- */
     .logo-text {
         font-size: 1.5rem;
         font-weight: 700;
     }
-    
+
     #main-nav .logo {
         width: 50px;
         height: 50px;
@@ -518,7 +518,7 @@ section h2 {
         margin-right: 5px;
     }
 
- /* ------ How it Works styling for mobiles and tablets ----- */
+    /* ------ How it Works styling for mobiles and tablets ----- */
     .how-it-works-steps {
         flex-direction: column;
         align-items: center;
@@ -599,13 +599,13 @@ section h2 {
     }
 
     #about-overview p,
-#about-mission p,
-#about-vision p,
-#about-team p,
-#about-cta p {
-    font-size: 1rem;
-    line-height: 1.5;
-}
+    #about-mission p,
+    #about-vision p,
+    #about-team p,
+    #about-cta p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
 
     section h2 {
         font-size: 1.3rem;
@@ -638,4 +638,109 @@ section h2 {
         font-size: 1.1rem;
         padding: 8px;
     }
+}
+
+
+/* Mobile-friendly Adjustments for Small Screens */
+@media (max-width: 576px) {
+
+    /* Containers */
+    #dashboard-container {
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 10px;
+    }
+
+    /* Task Tables */
+    .tasks-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+        font-size: 0.9rem;
+        table-layout: fixed;
+        /* Ensures the table respects column widths */
+    }
+
+    /* Section Titles */
+    .dashboard-title,
+    .section-title {
+        font-size: 1.3rem;
+    }
+
+    /* Forms */
+    #search-input {
+        width: 100%;
+        padding: 6px;
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+
+    /* Truncate long titles */
+    .tasks-table td.title-column {
+        max-width: 120px;
+        /* Limit title width */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .tasks-table th, .tasks-table td {
+        border: 1px solid #ddd;
+        padding: 6px;
+        text-align: left;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* Task Table */
+    .tasks-table th,
+    .tasks-table td {
+        padding: 5px;
+        font-size: 0.85rem;
+    }
+
+    /* Action buttons */
+    .task-actions a {
+        font-size: 0.9rem;
+    }
+
+    .fa-pen-to-square,
+    .fa-trash-can,
+    .fa-square-check {
+        font-size: 1rem;
+    }
+
+    .priority-select, .status-select {
+        width: 100%;
+        max-width: 120px; 
+        padding: 6px;
+        font-size: 0.9rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #fff;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        font-size: 0.7rem;
+    }
+
+    .tasks-table td {
+        padding: 5px;
+        font-size: 0.85rem;
+    }
+
+    .btn, .btn-search, .btn-create, .btn-submit {
+        width: auto;
+        padding: 8px 12px;
+        font-size: 0.9rem;
+        max-width: 200px; 
+        margin: 5px auto;
+    }
+
+
 }
