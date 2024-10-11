@@ -1,12 +1,53 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container">
-    <h1>About PlanApp</h1>
-    <p>PlanApp is a task manager designed to help users efficiently organize, prioritize, and track their tasks. With
-        features like color-coded task priorities and an intuitive dashboard, PlanApp aims to improve your productivity.
-    </p>
-    <p>We are committed to providing a user-friendly experience for all users. Feel free to explore the app, and don’t
-        hesitate to contact us if you have any questions!</p>
+<div id="about-container" class="container">
+    <h1 id="about-title">About MIMO</h1>
+
+    <section id="about-overview">
+        <p>MIMO is your go-to task manager, designed to help individuals and teams efficiently organize, prioritize, and
+            track their tasks.
+            Whether you're working on personal projects or managing a team, MIMO ensures you stay on top of your tasks
+            with ease.</p>
+    </section>
+
+    <section id="about-features">
+        <h2>Why MIMO?</h2>
+        <ul>
+            <li><strong>Task Prioritization:</strong> Set high, normal, or low priority for tasks with color-coded
+                labels for clarity.</li>
+            <li><strong>Seamless Task Management:</strong> Create, edit, and delete tasks effortlessly.</li>
+            <li><strong>Organized Dashboard:</strong> View active and completed tasks at a glance, helping you stay
+                organized.</li>
+            <li><strong>Responsive Design:</strong> Use MIMO on any device, be it mobile, tablet, or desktop.</li>
+        </ul>
+    </section>
+
+    <section id="about-mission">
+        <h2>Our Mission</h2>
+        <p>At MIMO, our mission is simple: to make task management as straightforward and effective as possible. We
+            believe that the key to productivity lies in simplicity and organization, and that’s why MIMO is built with
+            an intuitive interface and features that prioritize ease of use.</p>
+    </section>
+
+    <section id="about-vision">
+        <h2>Our Vision</h2>
+        <p>We envision MIMO becoming an essential tool for individuals and teams across the world, helping them
+            streamline their workflows, meet deadlines, and achieve their goals with greater efficiency.</p>
+    </section>
+
+    <section id="about-team">
+        <h2>Developed by Anna, Henry, Joe and Vishal</h2>
+        <p>MIMO is built by a passionate team of developers, designers, and visionaries. We are committed to continuous
+            improvement and providing the best user experience for all MIMO users. Together, we aim to redefine the way
+            you manage your tasks.</p>
+    </section>
+
+    <section id="about-cta">
+        <h2>Get Started with MIMO</h2>
+        <p>Join the growing community of users who are boosting their productivity with MIMO. It’s free to start, easy
+            to use, and designed to keep you organized!</p>
+        <a href="{% url 'account_signup' %}" class="btn btn-primary">Sign Up Now</a>
+    </section>
 </div>
 {% endblock %}
