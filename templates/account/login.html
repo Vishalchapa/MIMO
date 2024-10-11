@@ -3,6 +3,12 @@
 {% load allauth account %}
 {% block head_title %}
     {% trans "Sign In" %}
+
+{% load static %}
+{% if "account" in request.resolver_match.url_name %}
+    <link rel="stylesheet" href="{% static 'css/accounts-style.css' %}">
+{% endif %}
+
 {% endblock head_title %}
 {% block content %}
     {% element h1 %}
