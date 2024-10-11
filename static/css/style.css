@@ -386,6 +386,9 @@ body {
 
 
 
+
+
+
 /* Media query for mobile sized screens */
 @media (max-width: 768px) {
     .how-it-works-steps {
@@ -452,5 +455,19 @@ body {
     .task-actions a {
         margin-bottom: 10px;
         font-size: 1rem;
+    }
+
+/* ------ How to Use page stying for mobiles and tablets ----- */
+    #how-to-use-container {
+        padding: 10px;
+    }
+
+    #how-to-use-title {
+        font-size: 2rem;
+    }
+
+    .how-to-use-item {
+        font-size: 1.1rem;
+        padding: 8px;
     }
 }
