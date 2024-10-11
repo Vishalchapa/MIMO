@@ -641,7 +641,7 @@ section h2 {
 }
 
 
-/* Mobile-friendly Adjustments for Small Screens */
+/* ------------------------------Mobile Phones Adjustments ------------------------*/
 @media (max-width: 576px) {
 
     /* Containers */
@@ -665,18 +665,6 @@ section h2 {
     .dashboard-title,
     .section-title {
         font-size: 1.3rem;
-    }
-
-    /* Forms */
-    #search-input {
-        width: 100%;
-        padding: 6px;
-        font-size: 0.9rem;
-    }
-
-    .btn {
-        padding: 6px 12px;
-        font-size: 0.85rem;
     }
 
     /* Truncate long titles */
@@ -734,11 +722,19 @@ section h2 {
         font-size: 0.85rem;
     }
 
-    .btn, .btn-search, .btn-create, .btn-submit {
+    .btn, .btn-create, .btn-submit {
         width: auto;
         padding: 8px 12px;
         font-size: 0.9rem;
-        max-width: 200px; 
+        max-width: 150px; 
+        margin: 5px auto;
+    }
+
+    .btn-search {
+        width: auto;
+        padding: 8px 12px;
+        font-size: 0.9rem;
+        max-width: 70px; 
         margin: 5px auto;
     }
 
