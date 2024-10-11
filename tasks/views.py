@@ -20,18 +20,20 @@ def dashboard(request, task_id=None):
         task = None  # For creating a new task
 
     if request.method == 'POST':
-        if task:
-            form = TaskForm(request.POST, instance=task)  # Editing
+        if task_id:
+            task = get_object_or_404(Task, id=task_id, user=request.user)
+            form = TaskForm(request.POST, instance=task)
         else:
-            form = TaskForm(request.POST)  # Creating
+            form = TaskForm(request.POST)
+        
         if form.is_valid():
             task = form.save(commit=False)
-            task.user = request.user  # Assign task to logged-in user
+            task.user = request.user
             task.save()
             return redirect('dashboard')
     else:
-        form = TaskForm(instance=task)
-    
+        form = TaskForm(instance=task) if task_id else TaskForm()
+            
     # Handle search query
     query = request.GET.get('q', '').strip()
     if query:
