@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+
 <div id="dashboard-container" class="container">
     <h1 class="dashboard-title">Your Task Dashboard</h1>
     <!-- Search Form -->
@@ -42,7 +43,7 @@
                     </select>
                 </form></td>
             <td class="task-actions">
-                <a href="{% url 'task-edit' task.id %}"><i class="fa-solid fa-pen-to-square"></i></a> |
+                <a href="{% url 'task-edit' task.id %}" class="btn-edit"><i class="fa-solid fa-pen-to-square"></i></a> |
                 <a href="{% url 'task-delete' task.id %}"><i class="fa-solid fa-trash-can"></i></a>
             </td>
             </tr>
@@ -58,22 +59,37 @@
     
     <!-- Task Creation and Edit Form -->
     <h2 class="form-title">{% if task_id %}Edit Task{% else %}Create a New Task{% endif %}</h2>
-    <!-- Button to show the Create Task form -->
-    <button id="create-task-btn" class="btn btn-create">Create New Task</button>
-    <form method="post" id="createTaskForm">
+    <button id="create-task-btn" class="btn btn-create" style="{% if task_id or form.errors %}display: none;{% endif %}">Create New Task</button>
+    <form method="post" id="createTaskForm" style="{% if task_id or form.errors %}display: block;{% else %}display: none;{% endif %}">
         {% csrf_token %}
-        {{ form.as_p }}
+        {% if form.non_field_errors %}
+            <div class="alert alert-danger">
+                {{ form.non_field_errors }}
+            </div>
+        {% endif %}
+        {% for field in form %}
+            <div class="form-group">
+                {{ field.label_tag }}
+                {{ field }}
+                {% if field.errors %}
+                    <div class="alert alert-danger">
+                        {{ field.errors }}
+                    </div>
+                {% endif %}
+            </div>
+        {% endfor %}
         <button type="submit" class="btn btn-submit">{% if task_id %}Save Changes{% else %}Create Task{% endif %}</button>
-    </form>
+    </form>    
+
     <!-- Active Tasks Section -->
     <h2 class="section-title">Active Tasks</h2>
     <table id="active-tasks-table" class="tasks-table">
         <thead>
             <tr>
-                <th>Title</th>
-                <th>Due Date</th>
-                <th>Priority</th>
-                <th>Status</th>
+                <th class="sortable" data-sort="title">Title</th>
+                <th class="sortable" data-sort="due_day">Due Date</th>
+                <th class="sortable" data-sort="priority">Priority</th>
+                <th class="sortable" data-sort="status">Status</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -92,14 +108,14 @@
                 </form></td>
                 <td><form action="{% url 'change-status' task.id %}" method="post" class="status-form">
                     {% csrf_token %}
-                    <select name="status" class="priority-select" onchange="this.form.submit()">
+                    <select name="status" class="status-select" onchange="this.form.submit()">
                         <option value="0" {% if task.status == 0 %}selected{% endif %}>Not Started</option>
                         <option value="1" {% if task.status == 1 %}selected{% endif %}>In Progress</option>
                         <option value="2" {% if task.status == 2 %}selected{% endif %}>Completed</option>
                     </select>
                 </form></td>
             <td class="task-actions">
-                    <a href="{% url 'task-edit' task.id %}"><i class="fa-solid fa-pen-to-square"></i></a> |
+                    <a href="{% url 'task-edit' task.id %}" class="btn-edit"><i class="fa-solid fa-pen-to-square"></i></a> |
                     <a href="{% url 'task-delete' task.id %}"><i class="fa-solid fa-trash-can"></i></a> |
                     <a href="{% url 'task-complete' task.id %}"><i class="fa-solid fa-square-check"></i></a>
                 </td>
@@ -117,9 +133,9 @@
     <table id="completed-tasks-table" class="tasks-table">
         <thead>
             <tr>
-                <th>Title</th>
-                <th>Due Date</th>
-                <th>Priority</th>
+<th class="sortable" data-sort="title">Title</th>
+<th class="sortable" data-sort="due_day">Due Date</th>
+<th class="sortable" data-sort="priority">Priority</th>
                 <th>Status</th>
                 <th>Actions</th>
             </tr>
