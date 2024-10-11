@@ -254,6 +254,10 @@ body {
     margin-top: 10px;
 }
 
+#createTaskForm {
+    margin-top: 20px;
+}
+
 /* Task Tables */
 .tasks-table {
     width: 100%;
